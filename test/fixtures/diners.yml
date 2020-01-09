@@ -1,0 +1,35 @@
+siete_one: {
+  id: 701,
+  name: "China"
+}
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+#grupo 5
+cinco_uno:
+  id: 501
+  name: ola
+  last_name: kase
+  place_notif: false
+  favorite_notif: false
+  start_price: 0
+  end_price: 1000
+  identity_card: V-12345678
+  gender: flexible
+  birth_date: 1969/6/9
+  user_id: 1
+  place_id: 4
+
+tres_diner1:
+  name: 'Juan'
+  last_name: 'Perez'
+  identity_card: '23472122'
+  gender: 'M'
+  birth_date: '1995-10-17'
+  user: tres_one
+  place: tres_place1
+

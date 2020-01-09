@@ -1,0 +1,31 @@
+<h2 class="text-center">Cambia tu contraseña</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :reset_password_token, as: :hidden %>
+  <%= f.full_error :reset_password_token %>
+  <div class="container col-md-4 equipo1">
+
+    <div class="form-inputs text-center">
+      <%= f.input :password,
+                  label: "Nueva contraseña",
+                  placeholder: "Introduzca su nueva contraseña",
+                  required: true,
+                  autofocus: true,
+                  hint: ("#{@minimum_password_length} carácteres mínimo" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  label: "Confirma tu nueva contraseña",
+                  placeholder: "Confirme su nueva contraseña",
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+  </div>
+
+  <div class="form-actions text-center">
+    <%= f.button :submit, "Cambiar mi contraseña", class: "btn btn-primary equipo1-size" %> <br>
+    <%= render "users/shared/links" %>
+  </div>
+<% end %>
+

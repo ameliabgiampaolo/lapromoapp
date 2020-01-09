@@ -1,0 +1,224 @@
+<% if resource.role_id == 2 %>
+<div class="content">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3>Editar Datos de Acceso</h3>
+        </div>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <div class="box-body">
+          <% if flash[:alert] %>
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4><i class="icon fa fa-check"></i> Operacion exitosa!</h4>
+            <p><%= notice %></p>
+          </div>
+          <%end%>
+          <% if resource.errors.any? %>
+          <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4><i class="icon fa fa-ban"></i> Error!</h4>
+            <ul class="chart-legend clearfix">
+              <% resource.errors.each do |attr,msg| %>
+              <% unless msg == '' %>
+              <li><i class="fa fa-circle-o text-white"></i>
+                <%=
+                          case attr
+                          when :email
+                            "Correo: #{msg}"
+                          when :password
+                            "Contraseña nueva: #{msg}"
+                          when :current_password
+                            "Contraseña actual: #{msg}"
+                          when :password_confirmation
+                            "Confirmacion de contraseña: #{msg}"
+                          end               
+                      %></li>
+              <% end %>
+              <%end%>
+            </ul>
+          </div>
+          <% end %>
+          <div class="form-group <%= "has-error" if resource.errors[:email].any? %>">
+            <%= f.input :email, 
+                      required: true, 
+                      autofocus: true,
+                      label: 'Correo',
+                      # :label_html => { :class => 'type' },
+                      error_html: { class: 'help-block' },
+                      # error: f.object.errors.full_messages_for(:email).to_sentence,
+                      :input_html => { :class => 'form-control' } %>
+          </div>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
+          <div class="form-group <%= "has-error" if resource.errors[:password].any? %>">
+            <%= f.input :password,
+                    hint: "Dejalo en blanco si no quieres cambiarlo",
+                    required: false,
+                    label: 'Contraseña Nueva',
+                    error_html: { class: 'help-block' },
+                    input_html: { autocomplete: "new-password",:class => 'form-control' } %>
+          </div>
+          <div class="form-group <%= "has-error" if resource.errors[:password_confirmation].any? %>">
+            <%= f.input :password_confirmation,
+                    required: false,
+                    label: 'Confirmacion de Contraseña',
+                    error_html: { class: 'help-block' },
+                    input_html: { autocomplete: "new-password", :class => 'form-control' } %>
+          </div>
+          <div class="form-group <%= "has-error" if resource.errors[:current_password].any? %>">
+            <%= f.input :current_password,
+                    # hint: "we need your current password to confirm your changes",
+                    label: 'Contraseña Actual',
+                    required: false,
+                    error_html: { class: 'help-block' },
+                    input_html: { autocomplete: "current-password",:class => 'form-control' } %>
+          </div>
+        </div>
+        <div class="box-footer">
+          <%= f.button :submit, "Actualizar", :class => 'btn btn-info' %>
+        </div>
+        <!-- <%= link_to "Back", :back %> -->
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% elsif resource.role_id == 3 %>
+<section class="page-header page-header-modern page-header-md bg-transparent mb-0 pb-3">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-6 align-self-center p-static order-2 ">
+        <h1 class="text-10 text-color-dark my-3"> <strong>Editar</strong> Datos de Acceso</h1>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put },defaults: { required: false }) do |f| %>
+        <% if flash[:alert] %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true" style='color:#185927;'>&times;</span>
+          </button>
+          <h4 class="alert-heading">Operacion Exitosa!</h4>
+          <p style='color:#185927;'><%= notice %></p>
+        </div>
+        <%end%>
+        <% if resource.errors.any? %>
+        <div class="alert alert-danger" role='alert'>
+          <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true" style='color:#91474e'>&times;</span>
+                </button> -->
+          <strong>No se ha podido realizar los cambios por las siguientes razones:</strong>
+          <% resource.errors.each do |attr,msg| %>
+          <% unless msg == '' %>
+          <li style="font-size: 12px;">
+            <%=
+                          case attr
+                          when :email
+                            "Correo: #{msg}"
+                          when :password
+                            "Contraseña nueva: #{msg}"
+                          when :current_password
+                            "Contraseña actual: #{msg}"
+                          when :password_confirmation
+                            "Confirmacion de contraseña: #{msg}"
+                          end               
+                      %></li>
+          <% end %>
+          <%end%>
+        </div>
+        <% end %>
+        <div class="form-row">
+          <div class="form-group col">
+            <% if resource.errors[:email].any? %>
+            <%= f.input :email, 
+                autofocus: true,
+                label: 'Correo',
+                label_html: { style: 'font-weight: bold;color:#e09b23;' },
+                error_html: { class: 'invalid-feedback' },
+                input_html: { class: 'form-control is-invalid' }
+                # error: f.object.errors.full_messages_for(:email).to_sentence,
+                %>
+            <% else %>
+            <%= f.input :email, 
+              autofocus: true,
+              label: 'Correo',
+              label_html: { style: 'font-weight: bold;color:#e09b23;' },
+              # error: f.object.errors.full_messages_for(:email).to_sentence,
+              input_html: { class: 'form-control' }
+              %>
+            <% end %>
+          </div>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+
+        <div class="form-row">
+          <div class="form-group col">
+            <% if resource.errors[:password].any? %>
+            <%= f.input :password,
+                      required: false,
+                      :label_html => { :style => 'font-weight: bold;color:#e09b23;' },
+                      input_html: { autocomplete: "new-password" },
+                      error_html: { class: 'invalid-feedback' },
+                      input_html: { class: 'form-control is-invalid' } %>
+            <% else %>
+            <%= f.input :password,
+                        hint: "Dejalo blanco si no deseas cambiarlo",
+                        required: false,
+                        :label_html => { :style => 'font-weight: bold;color:#e09b23;' },
+                        input_html: { autocomplete: "new-password" },
+                        :input_html => { :class => 'form-control' } %>
+            <% end %>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <% if resource.errors[:password_confirmation].any? %>
+            <%= f.input :password_confirmation,
+                      required: false,
+                      :label_html => { :style => 'font-weight: bold;color:#e09b23;' },
+                      input_html: { autocomplete: "new-password" },
+                      error_html: { class: 'invalid-feedback' },
+                      input_html: { class: 'form-control is-invalid' } %>
+            <% else %>
+            <%= f.input :password_confirmation,
+                        required: false,
+                        :label_html => { :style => 'font-weight: bold;color:#e09b23;' },
+                        input_html: { autocomplete: "new-password" },
+                        :input_html => { :class => 'form-control' } %>
+            <% end %>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <% if resource.errors[:current_password].any? %>
+            <%= f.input :current_password,
+                      #hint: "we need your current password to confirm your changes",
+                      required: false,
+                      :label_html => { :style => 'font-weight: bold;color:#e09b23;' },
+                      input_html: { autocomplete: "current-password" },
+                      error_html: { class: 'invalid-feedback' },
+                      input_html: { class: 'form-control is-invalid' } %>
+            <% else %>
+            <%= f.input :current_password,
+                        #hint: "we need your current password to confirm your changes",
+                        required: false,
+                        :label_html => { :style => 'font-weight: bold;color:#e09b23;' },
+                        input_html: { autocomplete: "current-password" },
+                        :input_html => { :class => 'form-control' } %>
+            <% end %>
+          </div>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Actualizar", :class => 'btn btn-primary' %>
+        </div>
+        <% end %>
+
+        <%= link_to "Regresar", :back %>
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>

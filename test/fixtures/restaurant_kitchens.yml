@@ -1,0 +1,18 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+#grupo 5
+cinco_uno:
+  id: 501
+  restaurant_id: 501
+  kitchen_type_id: 501
+
+cinco_dos:
+  id: 502
+  restaurant_id: 502
+  kitchen_type_id: 501
+

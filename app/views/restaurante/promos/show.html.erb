@@ -1,0 +1,44 @@
+<section class="content-header">
+  <div class="alert alert-success alert-dismissible">
+    <i class="icon fa fa-check"><%= notice %></i>
+  </div>      
+</section>
+
+<section class="content">
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">Promocion</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th>Yumis</th>
+            <th>Tipo de promocion</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+          </tr>
+          </thead>
+          <tbody>
+              <tr>
+              <td><% if @promo.yumis %>
+              <%= 'Si' %>
+              <% else %>
+              <%= 'No' %>
+              <% end %></td>
+                <td><%= @promo.promo_type %></td>
+                <td><%= @promo.name %></td>
+                <td><%= @promo.description %></td>
+                <td><%= link_to 'Editar', edit_restaurante_promo_path(@promo), :class => 'btn btn-warning' %></td>
+                <td><%= link_to 'Atras', restaurante_promos_path, :class => 'btn btn-primary' %></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</section>

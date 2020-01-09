@@ -1,0 +1,27 @@
+    <h1 class="twinkling-three">Restaurantes</h1>
+    <% if Restaurant.count == 0 %>
+    <div class="row">
+        <div class="col-md-4">
+          <h4>No hay restaurantes registrados</h4>
+       </div>
+     </div>
+    <% else %>
+      
+    <div class="row">
+      <div class="col-md-4">
+   
+       <h4 style="margin-left: 10%"><b>Nombre</b></h4>
+     </div>
+      <div class="col-md-8">
+   
+       <h4 class="float-right", style="margin-right: 18%"><b>Status</b></h4>
+     </div>
+    </div>
+    <% end %>
+      
+   
+   
+   <%= render @restaurants%> 
+
+ 
+

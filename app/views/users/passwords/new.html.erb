@@ -1,0 +1,27 @@
+<h2 class="text-center">¿Olvidaste tu contraseña?</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= f.error_notification %>
+<div class="container col-md-4">
+  <div class="form-inputs text-center">
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                placeholder: "Introduzca su correo electrónico",
+                label: "Correo electrónico",
+                input_html: { autocomplete: "email" } %>
+  </div>
+
+ 
+
+
+
+
+</div>
+<div class="text-center">
+    <div class="form-actions">
+        <%= f.button :submit, "Enviar instrucciones para reestrablecer contraseña", class: "btn btn-primary equipo1-size" %>
+      </div>
+  <%= render "users/shared/links" %>
+</div>
+<% end %>

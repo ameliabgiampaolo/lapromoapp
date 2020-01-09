@@ -1,0 +1,151 @@
+          <div class="box box-info">
+            <p id="notice" style="color: blue"><%= notice %></p>
+            <div class="box-header with-border">
+              <h1 class="box-title">Preguntas Frecuentes</h1>
+            </div>
+             <div class="box-footer clearfix">
+              <div class="col-sm-4">
+                  <a href="articles/new" class="btn btn-info waves-effect waves-light" data-animation="fadein"
+                   data-plugin="custommodal" data-overlaycolor="#e09b23">
+                  <i class="fa fa-plus-circle"></i> Añadir Pregunta</a>
+              </div>
+              
+              <form>
+                  <div class="input-group margin pull-right col-xs-4">
+                  <input type="text" class="form-control" placeholder="Escribe el titulo de la FAQ..." name="title">
+                      <span class="input-group-btn">
+                        <button type="submit" style="background-color: #b4b2b2; color:black; border-color: #b4b2b2" class="btn btn-info btn-flat">Buscar</button>
+                      </span>
+                  </div>
+              </form>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="table-responsive">
+                <table class="pretty table table-centered table-striped" id="products-datatable">
+                  <thead >
+                  <tr >
+                    <th style="width: 200px;text-align: center;"><%= sortable "title","Título" %>
+                    <% if @SC_title == 1 and @ASC0_DESC1 == 0  %>
+                      <i class="fa fa-sort-up"></i>
+                    <% end %>
+                    <% if @SC_title == 1 and @ASC0_DESC1 == 1  %>
+                      <i class="fa fa-sort-down"></i>
+                    <% end %>
+                    </th>
+                    <th style="text-align: center;"><%= sortable "description", "Descripción" %>
+                      <% if @SC_description == 1 and @ASC0_DESC1 == 0  %>
+                        <i class="fa fa-sort-up"></i>
+                      <% end %>
+                      <% if @SC_description == 1 and @ASC0_DESC1 == 1  %>
+                        <i class="fa fa-sort-down"></i>
+                      <% end %>
+                    </th> 
+                    <th style="width: 150px; text-align: center;"><%= sortable "cont_trend",  "Tendencia"%>
+                      <% if @SC_tendencia == 1 and @ASC0_DESC1 == 0  %>
+                        <i class="fa fa-sort-up"></i>
+                      <% end %>
+                      <% if @SC_tendencia == 1 and @ASC0_DESC1 == 1  %>
+                        <i class="fa fa-sort-down"></i>
+                      <% end %>
+                    </th>
+                    <th style="width: 100px;text-align: center;"><%= sortable "user_id", "Usuario"%>
+                      <% if @SC_usuario == 1 and @ASC0_DESC1 == 0  %>
+                        <i class="fa fa-sort-up"></i>
+                      <% end %>
+                      <% if @SC_usuario == 1 and @ASC0_DESC1 == 1  %>
+                        <i class="fa fa-sort-down"></i>
+                      <% end %>
+                    </th>
+                    <th style="text-align: center;"><%= sortable "topic_id", "Tema"%>
+                      <% if @SC_tema == 1 and @ASC0_DESC1 == 0  %>
+                        <i class="fa fa-sort-up"></i>
+                      <% end %>
+                      <% if @SC_tema == 1 and @ASC0_DESC1 == 1  %>
+                        <i class="fa fa-sort-down"></i>
+                      <% end %>
+                    </th>
+                    <th style="width: 85px; color: #3c8dbc">Acción</th>
+                  </tr>
+                  </thead>
+
+                  <tbody>
+                    <% @articles.each do |article| %>
+                      <tr>
+                        <td class="table-user" style="text-align: center;"><%= article.title %></td>
+                        <td><%= article.description[0...70]+ '...' %></td>
+                        <td style="text-align: center;"><%= article.cont_trend %></td>
+                        <td style="text-align: center;"><%= User.get_username(article.user_id)[0] %></td>
+                        <td style="text-align: center;"><%= Topic.topics(article.topic_id)[0] %></td>
+                        <!--td> <a href="articles/1/confirm" class="btn btn-danger btn-flat pull-left">Eliminar</a> </td-->
+                        <td>
+                          <%= link_to '<i class="fa fa-edit fa-lg" style= "color: #03d2fb; margin-right: 7%;"></i>'.html_safe, edit_administrador_article_path(article.id) %>
+                          <a href="javascript:void(0);" class="action-icon" onclick="showModal(<%= article.id %>, '<%= article.title %>')"> <i class="fa fa-trash fa-lg" style= "color: red"></i></a>
+
+                        </td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+              <div style="color: #3c8dbc">
+              <%= will_paginate @articles, class: "digg_pagination pagination digg_pagination2", style:'float:right;position:relative;left:-50%;color:#3c8dbc',previous_label: "<", next_label:">"%></div>
+              <br>
+              <% if @cont == 1 %>
+              <button type="submit" style="background-color: #b4b2b2; color:black; border-color: #b4b2b2" class="btn btn-info btn-flat float-left" onClick="history.back()">Volver</button>
+              <% end %>
+              <!-- /.table-responsive -->
+            </div>
+
+          </div>
+            <!-- /.box-body -->
+           
+            <!-- /.box-footer -->
+
+<br>
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          . . .
+        </div>
+        <div class="modal-footer" style = 'text-align: center;'>
+          <button type="button" class="btn btn-primary delete">S&iacute;</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+
+<script>
+  
+  function showModal(id, name) {
+    $('#deleteModal .modal-dialog .modal-content .modal-body').html(
+        '¿Est&aacute; seguro de que desea eliminar el art&iacute;culo  «' + name + '»  ?'
+      )
+
+    $('button.delete').click(function() { confirm_delete(id, name) });
+
+    $('#deleteModal').modal('toggle');
+  }
+
+  function confirm_delete(id, name) {
+    $('#deleteModal').modal('toggle');
+    $.ajax({
+      url:"articles/" + id + "/confirm",
+      type: "GET",
+      data: {"name" : name},
+      cache: false,
+      success: function(data) {
+        alert(data.message);
+        console.log(data);
+        location.reload();
+      },
+      error: function(data) {
+        alert("Hubo un error");
+      }
+    })
+  }
+
+</script>

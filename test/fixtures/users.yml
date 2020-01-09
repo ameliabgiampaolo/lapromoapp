@@ -1,0 +1,79 @@
+siete_one: {
+  id: 701,
+  email: "man1"
+}
+siete_two: {
+  id: 702,
+  email: "man2"
+}
+siete_three: {
+  id: 703,
+  email: "man3"
+}
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+#grupo 5
+cinco_one:
+  user_name: ola
+  email: prueba@gmail.com
+  encrypted_password: 123456789
+  reset_password_token: 123456789
+  phone: (412)1234567
+  role_id: 501
+#
+
+three_one:
+  email: 'yonder@email.com'
+  encrypted_password: <%= Devise::Encryptor.digest(User, '123456') %>
+three_two:
+  email: 'yonder2@email.com'
+  encrypted_password: <%= Devise::Encryptor.digest(User, '123456') %>
+three_three:
+  email: 'yonder3@email.com'
+  encrypted_password: <%= Devise::Encryptor.digest(User, '123456') %>
+
+
+tres_one:
+  user_name: 'Usuario'
+  email: 'usuario@email.com'
+  encrypted_password: <%= Devise::Encryptor.digest(User, '123456') %>
+  role: tres_comensal
+
+tres_two:
+  user_name: 'Restaurant'
+  email: 'restaurant@email.com'
+  encrypted_password: <%= Devise::Encryptor.digest(User, '123456') %>
+  role: tres_restaurant
+  
+tres_three:
+  user_name: 'googleUser'
+  email: 'google@gmail.com'
+  encrypted_password: <%= Devise::Encryptor.digest(User, '123456') %>
+  is_google: true
+  role: tres_comensal
+
+tres_four:
+  user_name: 'Restaurant2'
+  email: 'restaurant2@email.com'
+  encrypted_password: <%= Devise::Encryptor.digest(User, '123456') %>
+  role: tres_restaurant
+
+
+dos_one:
+  id: 1
+  user_name: "marcoali2"
+  email: "marco@gmail.com" 
+  encrypted_password: <%= Devise::Encryptor.digest(User, '123456') %>
+  phone: "(414)1333333" 
+  role_id: 1
+
+nueve_one:
+  user_name: "marcoali2"
+  email: "marco2@gmail.com" 
+  phone: "(414)1333333" 
+  role_id: 1

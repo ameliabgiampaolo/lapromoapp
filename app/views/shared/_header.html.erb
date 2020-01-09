@@ -1,0 +1,152 @@
+<header id="header" class="header-effect-shrink " data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 120, 'stickyHeaderContainerHeight': 70}">
+        <div class="header-body border-top-0">
+            <div class="header-top border-bottom-0 bg-color-secondary">
+                <div class="container">
+                    <div class="header-row py-2">
+                        <div class="header-column justify-content-center justify-content-md-start">
+                            <div class="header-row">
+                                <nav class="header-nav-top">
+                                    <ul class="nav nav-pills">
+                                        <li class="nav-item">
+
+                                            <span class="text-light opacity-30 pl-0">El mejor lugar para comer LAPROMO!</span>
+
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="header-column justify-content-end d-none d-md-flex">
+                            <div class="header-row">
+                                <nav class="header-nav-top">
+                                    <ul class="nav nav-pills">
+                                    
+                                    <% if !user_signed_in? %>
+                                        <li class="nav-item">
+                                            <i class="far fa-user text-4 text-color-primary" style="top: 0;"></i> 
+                                            <%= link_to  "Iniciar sesión", new_user_session_path, style: "color: White;" %>
+                                        </li>
+                                        <li class="nav-item">
+                                            <i class="far fa-edit text-4 text-color-primary" style="top: 0;"></i> 
+                                            <%= link_to  "Registrarse", new_user_registration_path, style: "color: White;" %>
+
+                                        </li>  
+
+                                    <% else %>
+                                      <p  style="color: white; margin-top: 1%">Bienvenido, <%= current_user.user_name%></p>
+                                        <i class="fas fa-user-circle text-4 text-color-primary" style="top: 0; padding: 8px;"></i>
+                                            <li class="dropdown" >
+                                                <button class=" dropbtn">Mi Cuenta</button>   
+                                                    <ul class="dropdown-content ">
+
+                                                        <!-- AQUI VA LOS AJUSTE DEL USUARIO -->
+                                                        <li><%= link_to "Datos de acceso", edit_user_registration_path, style:'text-decoration:none;' %></li>
+
+                                                        <!-- AQUI VA LOS YUMIS DEL USUARIO -->
+                                                        <li><%= link_to "Datos personales",comensal_editar_path, style:'text-decoration:none;'%></li>
+
+                                                        <!-- AQUI VA EL LA RESERVAS DEL USUARIO  -->
+                                                        <li><%= link_to "Mis reservas",'', style:'text-decoration:none;'%></li>
+
+                                                        <!-- AQUI VA LOS COMENTARIOS DEL USUARIO  -->
+                                                        <li><%= link_to "Mis comentarios", my_comments_path, style:'text-decoration:none;'%></li>
+
+                                                        <!-- AQUI VA LOS FAVORITOS DEL USUARIO  -->
+                                                        <li><%= link_to "Mis favoritos",'', style:'text-decoration:none;'%></li>
+
+                                                        <!-- AQUI VA EL MANEJO DE SUBSCRIPCONES  -->
+                                                        <li><%= link_to "Mis Subscripciones de email", :diner_subscriptions, style:'text-decoration:none;'%></li>
+                                                    </ul>  
+                                            </li>
+                                        
+                                        <li class="nav-item">
+                                            <i class="fa fa-sign-in-alt  text-4 text-color-primary" style="top: 0;"></i> 
+                                            <%= link_to  "Cerrar sesión", destroy_user_session_path, method: :delete, style: "color: White;" %>
+                                        </li>                                          
+                                    <% end %>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-wrapper" style="min-height: 100px;">
+            <div id="wrap" class="header-container container-fluid">
+                <div class="header-row">
+                    <div class="header-column">
+                        <div class="header-row">
+                            <div class="header-logo">
+
+                                <%= link_to '/home/index',style:"text-decoration:none" do %>
+                                    <%= image_tag '/assets/logo-lapromo-9761a68b1de5779d036107e446ed0488090657142af07104d6a135a853adb41a.jpg', width: 200, height: 60 %>
+                                <%end%>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-column justify-content-end">
+                        <div class="header-row">
+                            <div class="header-nav order-2 order-lg-1">
+                                <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1">
+                                    <nav class="collapse">
+                                        <ul class="nav nav-pills" id="mainNav">
+                                            <li>
+                                            <!-- AQUI VA LA DIRECCION DEL HOME  -->
+
+
+                                                <%= link_to '/home/index' , style:"text-decoration:none" do %>
+                                                    HOME
+                                               <%end%>
+                                            </li>
+                                            <li>
+                                                <!-- AQUI VA LA DIRECCION DEL BUSCADOR -->
+                                                <%= link_to ' ', style:"text-decoration:none" do  %>
+                                                    BUSCADOR
+                                                 <%end%>
+
+                                            </li>
+                                         
+                                            <li>
+                                                <!-- AQUI VA LA DIRECCION PARA PREGUNTAS FRECUENTES -->
+
+                                                 <%= link_to topics_index_path, style:"text-decoration:none" do %>
+                                                    PREGUNTAS FRECUENTES
+                                                <%end%>
+                                            </li>
+                                            <li>
+                                                <!-- AQUI VA LA DIRECCION PARA PROGRAMA YUMIS -->
+                                                <%= link_to '/home/program_of_yumis', style:"text-decoration:none" do %>
+                                                    PROGRAMA YUMIS
+                                                <%end%>
+
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <script>
+   // Llama a la funcion al scrollear
+window.onscroll = function() {myFunction()};
+var navbar = document.getElementById("wrap");
+// Recibe la posicion offset del navbar
+var sticky = navbar.offsetTop;
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+    </script>

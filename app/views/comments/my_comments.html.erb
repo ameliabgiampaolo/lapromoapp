@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <h1 class="page-title">Mis opiniones</h1>
+            </div>
+        </div>
+    </div>     
+    <!-- end page title --> 
+    <% if @opinions.empty?%>
+        <div class="mx-auto" style="width: 100px; padding: 8em;"><h1> <%=flash[:warning]%> </h1></div>
+        
+    <% else %>
+    <div class="row">
+        <% @opinions.each do |opinion|%>
+            <div class="col-xl-4">
+                <div class="card-box" style="margin: 1em 1em 1em 1em">
+                    <!---<div class="dropdown float-right">
+                        <a href="#<%opinion.id%>" class="dropdown-toggle card-drop arrow-none" data-toggle="dropdown" aria-expanded="false">
+                            
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#<%opinion.id%>">Edit</a>
+                            <a class="dropdown-item" href="#<%opinion.id%>">Delete</a>
+                        </div>
+                    </div> <!-- end dropdown -->
+                    <!-- Title-->
+                    <h4 class="mt-0"> <%= opinion.name%> </h4>
+                                        
+                    <!-- Desc-->
+                    <p class="text-muted font-13 mb-3 sp-line-2"> <%= opinion.description%> </p>
+                    <!-- Progress-->
+                    <p class="mb-2 font-weight-bold">Servicio: <span class="float-right"> <%= opinion.service_rating %>/5</span></p>
+                    <div class="progress mb-1" style="height: 7px;">
+                        <div class="progress-bar"
+                            role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5"
+                            style="width: <%= opinion.service_rating * 20 %>%; background-color: #344257">
+                        </div><!-- /.progress-bar .progress-bar-danger -->
+                    </div><!-- /.progress .no-rounded -->
+                    <p class="mb-2 font-weight-bold">Ambiente: <span class="float-right"><%= opinion.ambient_rating %>/5</span></p>
+                    <div class="progress mb-1" style="height: 7px;">
+                        <div class="progress-bar"
+                        role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5"
+                        style="width: <%= opinion.ambient_rating * 20 %>%; background-color: #344257">
+                    </div><!-- /.progress-bar .progress-bar-danger -->
+                    </div>
+                    <p class="mb-2 font-weight-bold">Cocina: <span class="float-right"><%= opinion.kitchen_rating %>/5</span></p>
+                        <div class="progress mb-1" style="height: 7px;">
+                            <div class="progress-bar"
+                                role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5"
+                                style="width: <%= opinion.kitchen_rating * 20 %>%; background-color: #344257">
+                            </div><!-- /.progress-bar .progress-bar-danger -->
+                        </div>
+            </div> <!-- end card box-->
+        </div>
+        <% end %> 
+        
+    </div>
+    </br>
+            <%= will_paginate @opinions , previous_label:"Previo ", next_label: "Siguiente" , class:"digg_pagination pagination justify-content-center"%>
+        </br>
+</div>
+<%end %>
+                            

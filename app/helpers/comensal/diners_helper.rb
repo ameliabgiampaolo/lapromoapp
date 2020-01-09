@@ -1,0 +1,2 @@
+module Comensal::DinersHelper
+end

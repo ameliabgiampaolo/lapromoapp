@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Administrador - LA PROMO</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'administrador', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'administrador', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    
+    <%= yield :head %>
+    
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini">
+
+    <div class="wrapper">
+      <%= render  "shared/administrador/header" %>
+      <%= render  "shared/administrador/main_sidebar" %>
+      <div class="content-wrapper">
+        <%= yield %>
+      </div>
+      <%= render  "shared/administrador/footer" %>
+      <%= render  "shared/administrador/control_sidebar" %>
+      <div class="control-sidebar-bg"></div>
+    </div>
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <%= yield :js %>
+  </body>
+</html>

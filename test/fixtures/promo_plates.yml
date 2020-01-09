@@ -1,0 +1,40 @@
+siete_one: {
+  plate_id: 701,
+  promo_id: 701
+}
+
+siete_two: {
+  plate_id: 702,
+  promo_id: 701
+}
+
+siete_ three: {
+  plate_id: 701,
+  promo_id: 702
+}
+
+siete_four: {
+  plate_id: 701,
+  promo_id: 703
+}
+
+siete_five: {
+  plate_id: 702,
+  promo_id: 703
+}
+
+siete_five: {
+  plate_id: 703,
+  promo_id: 704
+}
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value

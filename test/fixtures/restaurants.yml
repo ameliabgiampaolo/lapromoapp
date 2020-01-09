@@ -1,0 +1,171 @@
+siete_one: {
+  id: 701,
+  name: "La piccola",
+  address: "Calle 1",
+  map_location: "Test",
+  zip_code: "10001",
+  capacity: 10,
+  rif: "J-123543234",
+  place_id: 704,
+  user_id: 701
+}
+siete_two: {
+  id: 702,
+  name: "Pizza king",
+  address: "Calle 13",
+  map_location: "Test",
+  zip_code: "10011",
+  capacity: 18,
+  description: "Reataurante de pizza",
+  rif: "J-123543234",
+  place_id: 704,
+  user_id: 702
+
+}
+siete_three: {
+  id: 703,
+  name: "Bugger 360",
+  address: "El marques",
+  place_id: 704,
+  user_id: 703,
+  address: "El marques"
+}
+
+siete_four: {
+  id: 704,
+  name: "Burguer shark",
+  capacity: 3,
+  address: "Santa Paula"
+
+}
+
+siete_five: {
+  id: 705,
+  name: "Bugger 360",
+    capacity: 4,
+  address: "El cafetal"
+}
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+#grupo 5
+cinco_one:
+  id: 501
+  name: roma mia
+  address: por ahi en caracas
+  map_location: nil
+  zip_code: 1020
+  capacity: 20
+  description: local de comida italiana
+  rif: J-01234567-8
+  particular: false
+  user_id: 1
+  place_id: 504
+
+cinco_dos:
+  id: 502
+  name: roma mia 2
+  address: por ahi en caracas tambien
+  map_location: nil
+  zip_code: 1020
+  capacity: 20
+  description: local de comida italiana
+  rif: J-01234568-8
+  particular: false
+  user_id: 1
+  place_id: 504
+# column: value
+#
+
+# column: value
+
+three_one:
+  name: grill
+  address: "frente a la bomba"
+  map_location: '1.43434,23.4343'
+  zip_code: 1020
+  description: 'descrip muy interesante'
+  rif: 'j4343434'
+  place: three_three
+  user: three_one
+
+tres_restaurant1:
+  name: 'Restaurant 1'
+  address: 'Soy una dirección del restaurant 1'
+  zip_code: '1030'
+  capacity: 50
+  rif: 'J-285643742'
+  place: tres_place1
+  user: tres_one
+tres_restaurant2:
+  name: 'Restaurant 2'
+  address: 'Soy una dirección del restaurant 2'
+  zip_code: '1051'
+  capacity: 30
+  rif: 'J-298157651'
+  place: tres_place5
+  user: tres_four
+
+dos_one:
+  id: 1
+  name: "Lorem Ipsum"
+  address: "Lorem ipsum dolor sit amet"
+  map_location: "Lorem ipsum dolor sit amet"
+  zip_code: 2050
+  capacity: 50
+  description: Quisque pellentesque auctor lectus, at sollicitudin metus ornare in. In hac habitasse platea dictumst. Pellentesque sodales dictum pulvinar. 
+  rif: "V262894810"
+  place_id: 366
+dos_two:
+  id: 2
+  name: "Lorem Ipsum"
+  address: "Lorem ipsum dolor sit amet"
+  map_location: "Lorem ipsum dolor sit amet"
+  zip_code: 2050
+  capacity: 50
+  description: Quisque pellentesque auctor lectus, at sollicitudin metus ornare in. In hac habitasse platea dictumst. Pellentesque sodales dictum pulvinar. 
+  rif: "V262894810"
+  place_id: 363
+dos_three:
+  id: 3
+  name: "Lorem Ipsum"
+  address: "Lorem ipsum dolor sit amet"
+  map_location: "Lorem ipsum dolor sit amet"
+  zip_code: 2050
+  capacity: 50
+  description: Quisque pellentesque auctor lectus, at sollicitudin metus ornare in. In hac habitasse platea dictumst. Pellentesque sodales dictum pulvinar. 
+  rif: "V262894810"
+  place_id: 390
+
+nueve_one:
+  name: "Lorem Ipsum"
+  address: "Lorem ipsum dolor sit amet"
+  map_location: "Lorem ipsum dolor sit amet"
+  zip_code: 2050
+  capacity: 50
+  description: Quisque pellentesque auctor lectus, at sollicitudin metus ornare in. In hac habitasse platea dictumst. Pellentesque sodales dictum pulvinar. 
+  rif: "V262894810"
+  place_id: 366
+nueve_two:
+  name: "Lorem Ipsum"
+  address: "Lorem ipsum dolor sit amet"
+  map_location: "Lorem ipsum dolor sit amet"
+  zip_code: 2050
+  capacity: 50
+  description: Quisque pellentesque auctor lectus, at sollicitudin metus ornare in. In hac habitasse platea dictumst. Pellentesque sodales dictum pulvinar. 
+  rif: "V262894810"
+  place_id: 363
+nueve_three:
+  name: "Lorem Ipsum"
+  address: "Lorem ipsum dolor sit amet"
+  map_location: "Lorem ipsum dolor sit amet"
+  zip_code: 2050
+  capacity: 50
+  description: Quisque pellentesque auctor lectus, at sollicitudin metus ornare in. In hac habitasse platea dictumst. Pellentesque sodales dictum pulvinar. 
+  rif: "V262894810"
+  place_id: 390
+

@@ -1,0 +1,116 @@
+siete_one: {
+  id: 701,
+  name: 'Venezuela',
+  type_place: 'Pais'
+}
+
+siete_two: {
+  id: 702,
+  name: 'Caracas',
+  type_place: 'Estado',
+  place_id: 701
+}
+
+siete_three: {
+  id: 703,
+  name: 'Vargas',
+  type_place: 'Estado',
+  place_id: 701
+}
+
+siete_four: {
+  id: 704,
+  name: 'Las mercedes',
+  type_place: 'Ciudad',
+  place_id: 702
+}
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+#grupo 5
+
+cinco_uno_pais:
+  id: 501
+  name: venezuela
+  type_place: pais
+  place_id: nil
+
+cinco_dos_estado:
+  id: 502
+  name: distrito capital
+  type_place: estado
+  place_id: 501
+
+cinco_tres_municipio:
+  id: 503
+  name: guaicaipuro
+  type_place: municipio
+  place_id: 502
+
+cinco_cuatro_parroquia:
+  id: 504
+  name: campo alegre
+  type_place: parroquia
+  place_id: 503
+#
+
+
+
+three_one:
+  name: caracas
+  type_place: estado
+three_two:
+  name: libertador
+  type_place: municipio
+  place: three_one
+three_three:
+  name: paraiso
+  type_place: parroquia
+  place: three_two
+three_four:
+  name: montalban
+  type_place: parroquia
+  place: three_two
+  
+tres_place4:
+  name: 'Venezuela'
+  type_place: 'Pais'
+
+tres_place3:
+  name: 'Distrito Capital'
+  type_place: 'Estado'
+  place: tres_place4
+
+tres_place2:
+  name: 'Libertador'
+  type_place: 'Municipio'
+  place: tres_place3
+
+tres_place1:
+  name: 'Antimano'
+  type_place: 'Parroquia'
+  place: tres_place2
+
+tres_place5:
+  name: 'La Vega'
+  type_place: 'Parroquia'
+  place: tres_place2
+
+dos_Amazonas:
+  id: 366
+  name: Amazonas
+  type_place: estado
+dos_Apure:
+  id: 363 
+  name: Apure
+  type_place: estado
+dos_Distrito_Capital:
+  id: 390
+  name: Distrito Capital
+  type_place: estado
+  
+

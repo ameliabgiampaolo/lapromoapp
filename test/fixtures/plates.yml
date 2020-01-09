@@ -1,0 +1,28 @@
+siete_one: {
+  id: 701,
+  name: "Pasta",
+  description: "Pasta con carne",
+  price: 32,
+  menu_type_id: 701
+}
+
+siete_two: {
+  id: 702,
+  name: "Pasticho",
+  description: "Pasticho de carne",
+  price: 40,
+  menu_type_id: 701
+}
+
+
+siete_three: {
+  id: 703,
+  name: "Tayarin",
+  description: "pasta china",
+  price: 40,
+  menu_type_id: 702
+}
+seis_one: 
+  name: "Arroz"
+  description: "Blanco"
+  price: 100

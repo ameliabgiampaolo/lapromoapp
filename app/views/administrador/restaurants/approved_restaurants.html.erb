@@ -1,0 +1,7 @@
+<h1 class="twinkling">Restaurantes aprobados</h1>
+<% if @restaurants.count == 0 %>
+  No hay restaurantes aprobados
+  <%else%>
+  <h4 style="margin-left: 5%"><b>Nombre</b></h4>
+<% end %>
+<%= render  @restaurants %>

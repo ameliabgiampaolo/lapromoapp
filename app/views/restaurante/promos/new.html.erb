@@ -1,0 +1,51 @@
+<section class="content">
+
+    <div class="row container">
+
+        <section class="col">
+
+            <div class="box box-success">
+                <div class="box-header with-border">
+        
+                    <h3 class="box-title">Agregar nueva promocion</h3>
+                    <!-- tools box -->
+
+                </div>
+
+                    <div class="box-body">
+                        <div class="nav-tabs-custom">
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a class="nav-link" href="#tabsNavigationSimple1" data-toggle="tab">% de descuento</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#tabsNavigationSimple2" data-toggle="tab">2x1</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#tabsNavigationSimple3" data-toggle="tab">% de descuento en un plato</a>
+                                </li>
+                            </ul>
+                        
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tabsNavigationSimple1">
+                                    <%= render 'form3', promo: @promo %>  
+                                </div>
+
+                                <div class="tab-pane" id="tabsNavigationSimple2">
+                                    <%= render 'form2', promo: @promo %>
+                                </div>
+
+                                <div class="tab-pane" id="tabsNavigationSimple3">
+                                    <%= render 'form', promo: @promo %>
+                                </div>
+
+                            </div>                  
+                                                    
+                        </div>
+                    </div>
+            </div>
+    
+        </section>
+
+    </div>
+</section>

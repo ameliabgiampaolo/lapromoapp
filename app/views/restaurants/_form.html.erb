@@ -1,0 +1,68 @@
+<div class="container">
+	<div class="row mb-4">
+		<% @restaurants.each do |restaurant| %>
+			<div class="col-md-4 col-lg-4 col-xs-6 p-3 isotope-item">
+				<div class="listing-item thumb-info-wrapper" >
+					<div class="thumb-info thumb-info-lighten border" style="border: none !important;">
+					<!-- Para redirigirse a la información del restaurant-->
+					<%= link_to restaurant_info_path(restaurantID:restaurant.id) do%>
+					<!-- Aqui se obtiene la imagen del scope Photo  -->
+						<div class="thumb-info-wrapper m-0 container2" >
+							<div class = "img-fluid mx-auto"  style= "display: block; overflow: hidden; ">
+								<%photo_restaurant=Photo.photo_restaurant(restaurant.id) %>
+								<% if photo_restaurant[0] %>
+									 <%= image_tag photo_restaurant[0], style: "filter: brightness(60%); max-height: 290px;" %>
+							    <% else %>
+									<%= image_tag "https://live.staticflickr.com/65535/49191292228_e3b7a20bbd_o.png", class: "card-img" %>
+								<% end %>
+							</div>
+						</div>
+					</div>
+					<section class=" bg-color-primary text-color-light p-3 " style="margin-top: 5px;">
+					<!-- Se muestran los datos obtenidos en una lista -->
+						<h2 style = "word-spacing: 2px; text-transform: capitalize; font-size:30px; color:white; text-align: center; padding-bottom: 0px;">
+							<%=restaurant.name %></h2>
+						<ul style = "font-size:12px;color:white">
+						<!-- Aqui se obtiene la informacion del promedio a traves de los scope Plate y Comment y con.round se redondea el valor a 2 decimales  -->
+							<% if Plate.avg_price_rest(restaurant.id).is_a? Numeric%>
+								<li>Precio plato promedio: <%= Plate.avg_price_rest(restaurant.id).round(2)%> $</li>
+							<% else %>
+								<li>Precio plato promedio:"No hay promedio disponible"</li>
+							<% end %>
+							<% if Comment.avg_kitchen_score_rest(restaurant.id).is_a? Numeric%>
+								<li>Puntuacion promedio(cocina): <%= Comment.avg_kitchen_score_rest(restaurant.id).round(2)%>/5</li>
+							<% else %>
+								<li>Puntuacion promedio(cocina): "No hay puntuacion disponible"</li>
+							<% end %>
+							<% if Comment.avg_ambient_score_rest(restaurant.id).is_a? Numeric%>
+								<li>Puntuacion promedio(ambiente): <%=Comment.avg_ambient_score_rest(restaurant.id).round(2)%>/5</li>
+							<% else %>
+								<li>Puntuacion promedio(ambiente): "No disponible"%></li>
+							<% end %>
+							<% if Comment.avg_service_score_rest(restaurant.id).is_a? Numeric %>
+								<li>Puntuacion promedio(servicio): <%= Comment.avg_service_score_rest(restaurant.id).round(2)%>/5</li>
+							<% else %>
+								<li>Puntuacion promedio(servicio): "No promedio de servicio disponible"</li>
+							<% end %>
+							<% if Comment.number_comments_rest(restaurant.id)%>
+								<li>Opiniones del restaurante: <%= Comment.number_comments_rest(restaurant.id)%></li>
+							<% else %>
+								<li>Opiniones del restaurante: "No disponible"%></li>
+							<% end %>	
+							<!-- Aqui se obtiene el dato de cocina por medio del scope KitchenType  -->
+							<% if KitchenType.kitchen_type_rest(restaurant.id)%>
+								<li>Tipo de cocina: <%= KitchenType.kitchen_type_rest(restaurant.id)[0].name%></li>
+							<% else %>
+								<li>Tipo de cocina: "No disponible"%></li>
+							<% end %>
+							<li>Direccion: <%=restaurant.address %></li>
+						</ul> 
+					</section>
+				</div>
+			</div>
+		   <%end%>
+		<%end%>
+		<!-- Para mostrar la paginacion -->
+		</div>
+		<%= will_paginate @restaurants, class: "digg_pagination pagination justify-content-center", previous_label: "<", next_label: ">"%>
+</div>

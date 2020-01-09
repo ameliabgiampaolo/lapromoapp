@@ -1,0 +1,22 @@
+
+<% content_for :head do %>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <link href='https://pedrofumero.com/assets/administrador/restaurant_form.css' rel='stylesheet' type="text/css" />
+<% end %>
+
+
+<div class="row row-contenido">
+	<div class="col-md-10 col-md-offset-1">
+		<%= render 'form', restaurant: @restaurant %>
+	</div>
+</div>
+
+
+<% content_for :js do %>
+	<!-- InputMask -->
+	<script src="/assets/administrador/jquery.inputmask.js"></script>
+	<script src="/assets/administrador/jquery.inputmask.extensions.js"></script>
+
+	<script src='/assets/administrador/restaurant_form.js'></script>
+<% end %>

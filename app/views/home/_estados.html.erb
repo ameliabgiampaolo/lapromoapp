@@ -1,0 +1,50 @@
+<div class="container">
+
+					<div class="row mb-4">
+					
+								<% @places.each do |place| %>
+
+						<div class="col-md-6 col-lg-4 p-3 isotope-item">
+							
+							<div class="listing-item" >
+								<%= link_to muestra_path(place_id: place.id) do %>
+									<div class="thumb-info thumb-info-lighten border">
+										
+										<div class="thumb-info-wrapper m-0 container2" >
+											
+													
+													<%a = Photo.estados(place.id)%>
+
+													<%= image_tag a[0] ,style: "filter: brightness(60%);"%>
+														<div class="centered">
+															<h2 style = "word-spacing: 999999999999999999px; font-size:50px; color: white">
+																<%=place.name%></h2>
+														</div>
+																							
+										</div>
+
+										
+									</div>
+									<%end%>
+									<div class="thumb-info-price bg-color-primary text-color-light text-4 pl-4 ">
+											<p style="color:white; font-size: 10px;">Cantidad de Restaurantes: <%=Restaurant.places(place.id)%></p>
+									
+									</div>
+								
+							</div>
+							
+						</div>
+						
+<%end%>
+
+							
+							
+					</div>
+					
+				<%= will_paginate @places, class: "digg_pagination pagination justify-content-center", previous_label: "<", next_label: ">"%>
+				<br>
+				
+	</div>
+
+
+				

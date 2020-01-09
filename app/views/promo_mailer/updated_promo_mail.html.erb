@@ -1,0 +1,12 @@
+
+    <h1>Hola <%= @diner.name %></h1>
+
+    <p>Uno de tus restaurantes favoritos (<%= @promo.restaurant.name %>) ha modificado una de sus promociones:</p>
+
+    <p>Nombre de la promoción: <%= @promo.name %></p>
+    <p>Tipo de promoción: <%= @promo.promo_type %></p>
+    <p>Descripción: <%= @promo.description %></p>
+
+    <p>Puedes saber más de esta promo haciendo click en el siguiente link:</p>
+
+    <%= link_to 'Ver detalles de la promo', restaurant_url(@promo.restaurant) %>

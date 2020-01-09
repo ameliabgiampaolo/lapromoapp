@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LA PROMO - ¡Descubre los mejores restaurantes!</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= yield :head %>
+  </head>
+  <%= render  "shared/header" %>
+  <body class="vista">
+    <% if notice || alert %>
+      
+    <div id="devise" class="text-center">
+      <b><p class="notice"><%= notice %></p></b>
+      <b><p class="alert"><%= alert %></p></b>
+    </div>      
+    <% end%>
+<div style="min-height: 80vh">
+  <%= yield %>
+</div>
+    
+
+    <%= yield :js %>
+    <script src='https://pedrofumero.com/assets/jquery.inputmask.js'></script>
+<script src='https://pedrofumero.com/assets/jquery.inputmask.extensions.js'></script>
+<script src='https://pedrofumero.com/assets/restaurant_form.js'></script>
+  </body>
+    <%= render  "shared/footer" %>
+       
+</html>

@@ -1,0 +1,79 @@
+siete_one: {
+  id: 701,
+  yumis: true,
+  promo_type: "Lorem ipsum",
+  name: "Descuento",
+  description: "Lorem ipsum dolor et sit",
+  restaurant_id: 701
+}
+
+siete_two: {
+  id: 702,
+  yumis: true,
+  promo_type: "Lorem ipsum",
+  name: "Descuento",
+  description: "Lorem ipsum dolor et sit",
+  restaurant_id: 701
+}
+
+siete_three: {
+  id: 703,
+  yumis: true,
+  promo_type: "Lorem ipsum",
+  name: "Descuento",
+  description: "Lorem ipsum dolor et sit",
+  restaurant_id: 701
+}
+
+siete_four: {
+  id: 704,
+  yumis: true,
+  promo_type: "Lorem ipsum",
+  name: "Descuento",
+  description: "Lorem ipsum dolor et sit",
+  restaurant_id: 702
+}
+siete_five: {
+  id: 705,
+  restaurant_id: 704,
+  yumis: false,
+  promo_type: "Combo",
+  name: "Dos a precio de uno",
+  description: "2x1"
+}
+
+siete_six: {
+  id: 706,
+  restaurant_id: 705,
+  yumis: false,
+  promo_type: "Descuento",
+  name: "Dia feliz",
+  description: "-20%"
+}
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+#grupo 5
+promo:
+  id: 1
+  restaurant_id: 1
+  name: promo1
+  promo_type: 2x1
+  description: buena promo
+  yumis: false
+
+seis_one: 
+  yumis: true
+  promo_type: "2x1"
+  name: "Gran Promoción"
+  description: "Promoción en cualquier plato y pagas dos por el precio de uno"
+
+seis_two: 
+  yumis: false
+  promo_type: "por % de descuento"
+  name: "Mitad de precio"
+  description: "Promoción en cualquier plato y pagas solo el 50% del precio real"

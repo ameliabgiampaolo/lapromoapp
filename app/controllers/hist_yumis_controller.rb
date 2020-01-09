@@ -1,0 +1,2 @@
+class HistYumisController < ApplicationController
+end

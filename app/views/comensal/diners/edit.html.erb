@@ -1,0 +1,167 @@
+
+<% content_for :head do %>
+  <link href='https://pedrofumero.com/assets/administrador/restaurant_form.css' rel='stylesheet' type="text/css" />
+<% end %>
+
+<section class="page-header page-header-modern page-header-md bg-transparent mb-0 pb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 align-self-center p-static order-2 text-center">
+        <h1 class="text-10 text-color-dark my-3">Mis datos </h1>
+        <p class="text-3">Sustituye los campos con la información correcta<br>Luego presiona el botón "Actualizar" para
+          almacenar la información</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 offset-md-3 ">
+
+      <% if @comensal.errors.any? %>
+      <%= puts @comensal.errors.inspect %>
+      <div class="alert alert-danger">
+        <span class="error">No se ha podido realizar los cambios por las siguientes razones</span>
+        <div class="error_explanation">
+          <ul>
+            <% @comensal.errors.each do |attr,msg| %>
+            <% if attr.to_s.include?'user.diner' %>
+            <li>
+              <%= "#{msg}" if @comensal.errors[attr].first == msg && @comensal.errors[attr].first != '' || @comensal.errors[attr].first != ' ' %>
+            </li>
+            <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-12 offset-md-3">
+
+
+      <%if !flash.empty? %>
+      <div class="row">
+        <div class="col-lg-12">
+          <% flash.each do |key, value| %>
+          <%if key == "notice" %>
+          <div class="alert alert-success ">
+            <%else%>
+            <div class="alert alert-<%=key%> ">
+              <%end%>
+              <a class="close" data-dismiss="alert" href="#">&times;</a>
+              <strong><%=value%></strong>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <%end%>
+        <%= simple_form_for([:comensal, @comensal]) do |f| %>
+        <% if @comensal.errors[:name].any? %>
+        <%= f.input :name, label: 'Nombre', 
+                input_html: { class: 'form-control is-invalid' }, 
+                label_html: { class: 'em_separator', id: 'mt_null' },
+                error_html: { class: 'help-block error_pedro' } %>
+        <% else %>
+        <%= f.input :name, label: 'Nombre', input_html: { class: 'form-control' },
+                 label_html: { class: 'em_separator', id: 'mt_null' } %>
+        <% end %>
+        <% if @comensal.errors[:last_name].any? %>
+        <%= f.input :last_name, label: 'Apellido', input_html: { class: 'form-control is-invalid' }, label_html: { class: 'em_separator' }, error_html: { class: 'help-block error_pedro' } %>
+        <% else %>
+        <%= f.input :last_name, label: 'Apellido', input_html: { class: 'form-control' }, label_html: { class: 'em_separator' } %>
+        <% end %>
+        <span class="em_separator separator_b">Fecha de nacimiento</span>
+        <div class="fecha_nac">
+          <%= f.input :birth_date, label: '.', 
+              input_html: { class: 'form-control' },
+              error_html: { class: 'help-block error_pedro' },
+              label_html: { class: 'em_separator label_fecha' }, start_year: Date.today.year - 90, end_year: Date.today.year - 12 %>
+        </div>
+
+        <%= f.fields_for :user, defaults: { input_html: { class: 'form-control', 'data-inputmask'=>'"mask": "(999) 999-9999"', 'data-mask'=>'' } } do |form_user| %>
+        <%= form_user.input :phone, label: 'Teléfono', label_html: { class: 'em_separator' },error_html: { class: 'help-block error_pedro' } %>
+        <% end %>
+
+        <% if @comensal.errors[:identity_card].any? %>
+        <%= f.input :identity_card, label: 'Cédula de identidad', input_html: { class: 'form-control is-invalid' }, label_html: { class: 'em_separator' }, error_html: { class: 'help-block error_pedro' } %>
+        <% else %>
+        <%= f.input :identity_card, label: 'Cédula de identidad', input_html: { class: 'form-control' }, label_html: { class: 'em_separator' } %>
+        <% end %>
+
+
+        <div class="">
+          <!-- <%= f.radio_button :gender, collection: [['Masculino', 'M'], ['Femenino', 'F']], input_html: { class: 'form-check-input' }, label_html: { class: 'em_separator', id: 'radio_styles' }, error_html: { class: 'help-block error_pedro' } %>
+           -->
+          <span class="em_separator separator_b">Genero</span>
+          <input type="radio" name="diner[gender]" value='F' <% if @comensal.gender == 'F'  %>checked<%end%> id="femenino">
+          <label for="femenino">Femenino</label>
+          <input type="radio" name="diner[gender]" value='M' <% if @comensal.gender == 'M'  %>checked<%end%> id="masculino">
+          <label for="masculino">Masculino</label>
+        </div>
+
+        <span class="em_separator separator_b">Ubicación (Estado / Municipio / Parroquia)</span>
+
+        <select id="estados">
+          <option value=''>Estado</option>
+        </select>
+
+        <select id="municipios">
+          <option value=''>Municipio</option>
+        </select>
+
+        <select name="place_id" id="diner_place_id">
+          <option value=''>Parroquia</option>
+        </select>
+        <% if @comensal.errors[:place].any? %>
+        <span class="error help-block error_pedro">La parroquia
+        </span><%= f.error :place, class:'help-block error_pedro' %>
+        <%end%>
+        <div >
+          <%= f.check_box :favorite_notif %> <label style="display:inline-block" class="em_separator" for="diner_favorite_notif">Suscribirse a correos de restaurantes favoritos</label>
+          <%= f.error :'favorite_notif', class:'help-block' %>
+        </div>
+
+
+        <div class="row">
+          <div class="col-6 offset-3">
+            <%= f.button :submit, 'Actualizar', class: 'btn-warning text-dark' %>
+
+          </div>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <% content_for :js do %>
+  <script src="/assets/administrador/jquery.inputmask.js"></script>
+  <script src="/assets/administrador/jquery.inputmask.extensions.js"></script>
+  <script src="/assets/administrador/select2.full.min.js"></script>
+  <script src='/assets/administrador/restaurant_form.js'></script>
+  <% end %>
+  <script>
+    var id_ = '#diner_place_id';
+    var map_location = undefined;
+
+    <% if @comensal.place_id %>
+      var parroquia_sel_id = <%= @comensal.place_id %> ;
+    var municipio_sel_id = <%= @municipio_id %> ;
+    var estado_sel_id = <%= @estado_id %> ;
+
+    <% else %>
+      var parroquia_sel_id = undefined;
+    var municipio_sel_id = undefined;
+    var estado_sel_id = undefined; 
+    <% end %>
+  </script>

@@ -1,0 +1,39 @@
+    <h1 class="twinkling">Detalle del restaurante</h1>
+
+    <div class="card mb-3" style="max-width: 540px; margin-left: 2%">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+               <!--  <img src="" class="card-img" alt="..."> -->
+               <% if @photo[0] %>
+               <%= image_tag @photo[0], class: "card-img" %>
+               <% else %>
+               <%= image_tag "https://live.staticflickr.com/65535/49191292228_e3b7a20bbd_o.png", class: "card-img" %>
+               <% end %>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><b>Restaurante: <%=@restaurant.name%></b></h5>
+                  <p class="card-text"><%= @restaurant.description%></p>
+                  <p class="card-text"> Dirección: <%= @restaurant.address%></p>
+                  <p class="card-text"> Capacidad: <%= @restaurant.capacity%></p>
+                  <p class="card-text"> Particular: <%= @restaurant.particular ? "Si" : "No"%></p>
+                  <p class="card-text"> RIF: <%= @restaurant.rif%></p>
+                  <p class="card-text"> Codigo Postal: <%= @restaurant.zip_code%></p>
+                  <p class="card-text"><small class="text-muted">Hora inicial: <%= @restaurant.start_time%></small></p>
+                  <p class="card-text"><small class="text-muted">Hora final: <%= @restaurant.end_time%></small></p>
+                  <p class="card-text"><b><small class="text-muted">Localización: <%= @place.name%> - <%= @place.type_place%></small></b></p>
+                </div>
+              </div>
+            </div>
+          </div>
+<% if !@user[0].approved %>  
+<%= link_to 'Aprobar', administrador_approve_path(@restaurant), class: "btn btn-primary",
+style: "margin-left: 2%; margin-top: 2%" %>
+<%= link_to  "Rechazar", administrador_reject_restaurant_path(@restaurant), method: :delete, class: "btn btn-primary",
+style: "margin-left: 2%; margin-top: 2%" %>
+<% else %>
+<%= link_to 'Cancelar acceso', administrador_cancel_path(@restaurant), class: "btn btn-primary",
+style: "margin-left: 2%; margin-top: 2%" %>
+<% end %>
+<%= link_to 'Regresar', administrador_restaurants_path, class: "btn btn-primary",
+style: "margin-left: 2%; margin-top: 2%" %>

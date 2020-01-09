@@ -1,0 +1,46 @@
+
+    <!-- Begin page -->
+    <div id="wrapper">
+        <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    
+                    <!-- Form row -->
+                    <h3 class="page-title">Modificar Pregunta Frecuente</h3>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <%= form_for :article, url:{:controller=>'articles', :action=>'update'}, html:{method:'put'} do |f| %>
+                                      <div class="form-row ">
+                                        <%= f.label :Titulo, :class => "col-form-label" %><br>
+                                        <%= f.text_field :title, :class => "form-control", :id => "simpleinput" %>
+                                      </div>
+
+                                      <div class="form-row mb-6">
+                                        <%= f.label :Contenido %><br>
+                                        <%= f.text_area :description, :class => "form-control", :id => "example-textarea", :rows => "15"   %>
+                                      </div>
+
+                                      <div class="row">
+                                        <div class="form-group col-md-4 ">
+                                            <%= f.label :Tema %><br>
+                                            <%= f.collection_select(:topic_id, Topic.all,:id , :name, {:prompt=>true}, {:class=>'form-control', :id => "inputState"} ) %>
+                                        </div>       
+                                      </div>
+                                      <div class="text-center">
+                                        <%= f.submit "Modificar", :type =>"submit", :class => "btn btn-primary waves-effect waves-light" %>
+                                        <button type="submit" style="background-color: #b4b2b2; color:black; border-color: #b4b2b2" class="btn btn-info btn-flat" onClick="javascript:history.go(-1);return false;">Volver</button>
+                                      </div>
+                                    <% end %> <!-- end form -->
+                                </div> <!-- end card-body -->
+                            </div> <!-- end card-->
+                        </div> <!-- end col -->
+                    </div>
+                    <!-- end row -->                    
+
+            </div> <!-- content -->
+</div>
+</div>
+<br>

@@ -1,0 +1,20 @@
+<%= simple_form_for([:restaurante, @plate], defaults: { input_html: { class: 'form-control' } }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+      <%= f.input :name, :label => "Nombre del plato", placeholder: 'Ingrese el nombre del plato', autofocus: true %>
+    <hr></hr>
+      <%= f.input :description, :label => "Descripción del plato", placeholder: 'Ingrese una breve descripción del plato'%>
+    <hr></hr> 
+      <%= f.input :price, :label => "Precio del plato" %>
+    <hr></hr> 
+      <%= f.association :menu_type, :label => "Menú para el plato", placeholder: 'Menú al que pertenece' %>
+    <hr></hr>
+  </div>
+
+    <div class="form-actions">
+      <%= f.submit "Editar plato", :class => 'btn btn-success'%>
+      <%= link_to 'Atrás', restaurante_plates_path, :class => 'btn btn-primary'%>
+    </div>
+<% end %>

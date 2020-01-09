@@ -1,0 +1,10 @@
+<br>
+<h3 style="margin-left: 85px; text-transform: capitalize"> 
+  Buscar restaurantes <strong style="color: #e09b23"> por Tipo De Comida</strong></h3>
+<div class="container">
+    <% @kitchens.each do |k| %>
+      <%= link_to k.name, mostrar_path(name: k.name), 
+        :class => "btn btn-default btn-flat", :style => "color: #e09b23" %>
+    <% end %>
+</div>
+<br>

@@ -1,0 +1,831 @@
+siete_one: {
+  id: 701,
+  restaurant_id: 701,
+  diner_id: 701
+}
+
+siete_two: {
+  id: 702,
+  restaurant_id: 701,
+  diner_id: 701
+}
+
+siete_three: {
+  id: 703,
+  restaurant_id: 701,
+  diner_id: 701
+}
+
+siete_four: {
+  id: 704,
+  restaurant_id: 701,
+  diner_id: 701
+}
+
+siete_five: {
+  id: 705,
+  restaurant_id: 701,
+  diner_id: 701
+}
+
+siete_six: {
+  id: 706,
+  restaurant_id: 703,
+  diner_id: 701
+}
+
+siete_seven: {
+  id: 707,
+  restaurant_id: 703,
+  diner_id: 701
+}
+
+siete_eight: {
+  id: 7501,
+  restaurant_id: 701,
+  reservation_date: '2019/12/1'
+}
+
+siete_1_110: {
+  id: 7502,
+  restaurant_id: 701,
+  reservation_date: '2019/12/2'
+}
+
+siete_1_111: {
+  id: 7503,
+  restaurant_id: 701,
+  reservation_date: '2019/12/3'
+}
+
+siete_1_112: {
+  id: 7504,
+  restaurant_id: 701,
+  reservation_date: '2019/12/4'
+}
+
+siete_1_113: {
+  id: 7505,
+  restaurant_id: 701,
+  reservation_date: '2019/12/5'
+}
+
+siete_1_114: {
+  id: 7506,
+  restaurant_id: 703,
+  reservation_date: '2019/12/6'
+}
+
+siete_1_115: {
+  id: 7507,
+  restaurant_id: 703,
+  reservation_date: '2019/12/7'
+}
+
+siete_1_10: {
+id: 7010,
+restaurant_id: 702,
+reservation_date: '2019-12-09',
+people_num: 20
+}
+
+siete_1_11: {
+id: 7011,
+restaurant_id: 702,
+reservation_date: '2019-12-10',
+people_num: 20
+}
+
+siete_1_12: {
+id: 7012,
+restaurant_id: 702,
+reservation_date: '2019-12-11',
+people_num: 20
+}
+
+siete_1_13: {
+id: 7013,
+restaurant_id: 702,
+reservation_date: '2019-12-12',
+people_num: 20
+}
+
+siete_1_14: {
+id: 7014,
+restaurant_id: 702,
+reservation_date: '2019-12-13',
+people_num: 20
+}
+
+siete_1_15: {
+id: 7015,
+restaurant_id: 702,
+reservation_date: '2019-12-14',
+people_num: 20
+}
+
+siete_1_16: {
+id: 7016,
+restaurant_id: 702,
+reservation_date: '2019-12-15',
+people_num: 20
+}
+
+siete_1_17: {
+id: 7017,
+restaurant_id: 702,
+reservation_date: '2019-12-16',
+people_num: 20
+}
+
+siete_1_18: {
+id: 7018,
+restaurant_id: 702,
+reservation_date: '2019-12-17',
+people_num: 20
+}
+
+siete_1_19: {
+id: 7019,
+restaurant_id: 702,
+reservation_date: '2019-12-18',
+people_num: 20
+}
+
+siete_1_20: {
+id: 7020,
+restaurant_id: 702,
+reservation_date: '2019-12-19',
+people_num: 20
+}
+
+siete_1_21: {
+id: 7021,
+restaurant_id: 702,
+reservation_date: '2019-12-20',
+people_num: 20
+}
+
+siete_1_22: {
+id: 7022,
+restaurant_id: 702,
+reservation_date: '2019-12-21',
+people_num: 20
+}
+
+siete_1_23: {
+id: 7023,
+restaurant_id: 702,
+reservation_date: '2019-12-22',
+people_num: 20
+}
+
+siete_1_24: {
+id: 7024,
+restaurant_id: 702,
+reservation_date: '2019-12-23',
+people_num: 20
+}
+
+siete_1_25: {
+id: 7025,
+restaurant_id: 702,
+reservation_date: '2019-12-24',
+people_num: 20
+}
+
+siete_1_26: {
+id: 7026,
+restaurant_id: 702,
+reservation_date: '2019-12-25',
+people_num: 20
+}
+
+siete_1_27: {
+id: 7027,
+restaurant_id: 702,
+reservation_date: '2019-12-26',
+people_num: 20
+}
+
+siete_1_28: {
+id: 7028,
+restaurant_id: 702,
+reservation_date: '2019-12-27',
+people_num: 20
+}
+
+siete_1_29: {
+id: 7029,
+restaurant_id: 702,
+reservation_date: '2019-12-28',
+people_num: 20
+}
+
+siete_1_30: {
+id: 7030,
+restaurant_id: 702,
+reservation_date: '2019-12-29',
+people_num: 20
+}
+
+siete_1_31: {
+id: 7031,
+restaurant_id: 702,
+reservation_date: '2019-12-30',
+people_num: 20
+}
+
+siete_1_32: {
+id: 7032,
+restaurant_id: 702,
+reservation_date: '2019-12-31',
+people_num: 20
+}
+
+siete_1_33: {
+id: 7033,
+restaurant_id: 702,
+reservation_date: '2020-01-01',
+people_num: 20
+}
+
+siete_1_34: {
+id: 7034,
+restaurant_id: 702,
+reservation_date: '2020-01-02',
+people_num: 20
+}
+
+siete_1_35: {
+id: 7035,
+restaurant_id: 702,
+reservation_date: '2020-01-03',
+people_num: 20
+}
+
+siete_1_36: {
+id: 7036,
+restaurant_id: 702,
+reservation_date: '2020-01-04',
+people_num: 20
+}
+
+siete_1_37: {
+id: 7037,
+restaurant_id: 702,
+reservation_date: '2020-01-05',
+people_num: 20
+}
+
+siete_1_38: {
+id: 7038,
+restaurant_id: 702,
+reservation_date: '2020-01-06',
+people_num: 20
+}
+
+siete_1_39: {
+id: 7039,
+restaurant_id: 702,
+reservation_date: '2020-01-07',
+people_num: 20
+}
+
+siete_1_40: {
+id: 7040,
+restaurant_id: 702,
+reservation_date: '2020-01-08',
+people_num: 20
+}
+
+siete_1_41: {
+id: 7041,
+restaurant_id: 702,
+reservation_date: '2020-01-09',
+people_num: 20
+}
+
+siete_1_42: {
+id: 7042,
+restaurant_id: 702,
+reservation_date: '2020-01-10',
+people_num: 20
+}
+
+siete_1_43: {
+id: 7043,
+restaurant_id: 702,
+reservation_date: '2020-01-11',
+people_num: 20
+}
+
+siete_1_44: {
+id: 7044,
+restaurant_id: 702,
+reservation_date: '2020-01-12',
+people_num: 20
+}
+
+siete_1_45: {
+id: 7045,
+restaurant_id: 702,
+reservation_date: '2020-01-13',
+people_num: 20
+}
+
+siete_1_46: {
+id: 7046,
+restaurant_id: 702,
+reservation_date: '2020-01-14',
+people_num: 20
+}
+
+siete_1_47: {
+id: 7047,
+restaurant_id: 702,
+reservation_date: '2020-01-15',
+people_num: 20
+}
+
+siete_1_48: {
+id: 7048,
+restaurant_id: 702,
+reservation_date: '2020-01-16',
+people_num: 20
+}
+
+siete_1_49: {
+id: 7049,
+restaurant_id: 702,
+reservation_date: '2020-01-17',
+people_num: 20
+}
+
+siete_1_50: {
+id: 7050,
+restaurant_id: 702,
+reservation_date: '2020-01-18',
+people_num: 20
+}
+
+siete_1_51: {
+id: 7051,
+restaurant_id: 702,
+reservation_date: '2020-01-19',
+people_num: 20
+}
+
+siete_1_52: {
+id: 7052,
+restaurant_id: 702,
+reservation_date: '2020-01-20',
+people_num: 20
+}
+
+siete_1_53: {
+id: 7053,
+restaurant_id: 702,
+reservation_date: '2020-01-21',
+people_num: 20
+}
+
+siete_1_54: {
+id: 7054,
+restaurant_id: 702,
+reservation_date: '2020-01-22',
+people_num: 20
+}
+
+siete_1_55: {
+id: 7055,
+restaurant_id: 702,
+reservation_date: '2020-01-23',
+people_num: 20
+}
+
+siete_1_56: {
+id: 7056,
+restaurant_id: 702,
+reservation_date: '2020-01-24',
+people_num: 20
+}
+
+siete_1_57: {
+id: 7057,
+restaurant_id: 702,
+reservation_date: '2020-01-25',
+people_num: 20
+}
+
+siete_1_58: {
+id: 7058,
+restaurant_id: 702,
+reservation_date: '2020-01-26',
+people_num: 20
+}
+
+siete_1_59: {
+id: 7059,
+restaurant_id: 702,
+reservation_date: '2020-01-27',
+people_num: 20
+}
+
+siete_1_60: {
+id: 7060,
+restaurant_id: 702,
+reservation_date: '2020-01-28',
+people_num: 20
+}
+
+siete_1_61: {
+id: 7061,
+restaurant_id: 702,
+reservation_date: '2020-01-29',
+people_num: 20
+}
+
+siete_1_62: {
+id: 7062,
+restaurant_id: 702,
+reservation_date: '2020-01-30',
+people_num: 20
+}
+
+siete_1_63: {
+id: 7063,
+restaurant_id: 702,
+reservation_date: '2020-01-31',
+people_num: 20
+}
+
+siete_1_64: {
+id: 7064,
+restaurant_id: 702,
+reservation_date: '2020-02-01',
+people_num: 20
+}
+
+siete_1_65: {
+id: 7065,
+restaurant_id: 702,
+reservation_date: '2020-02-02',
+people_num: 20
+}
+
+siete_1_66: {
+id: 7066,
+restaurant_id: 702,
+reservation_date: '2020-02-03',
+people_num: 20
+}
+
+siete_1_67: {
+id: 7067,
+restaurant_id: 702,
+reservation_date: '2020-02-04',
+people_num: 20
+}
+
+siete_1_68: {
+id: 7068,
+restaurant_id: 702,
+reservation_date: '2020-02-05',
+people_num: 20
+}
+
+siete_1_69: {
+id: 7069,
+restaurant_id: 702,
+reservation_date: '2020-02-06',
+people_num: 20
+}
+
+siete_1_70: {
+id: 7070,
+restaurant_id: 702,
+reservation_date: '2020-02-07',
+people_num: 20
+}
+
+siete_1_71: {
+id: 7071,
+restaurant_id: 702,
+reservation_date: '2020-02-08',
+people_num: 20
+}
+
+siete_1_72: {
+id: 7072,
+restaurant_id: 702,
+reservation_date: '2020-02-09',
+people_num: 20
+}
+
+siete_1_73: {
+id: 7073,
+restaurant_id: 702,
+reservation_date: '2020-02-10',
+people_num: 20
+}
+
+siete_1_74: {
+id: 7074,
+restaurant_id: 702,
+reservation_date: '2020-02-11',
+people_num: 20
+}
+
+siete_1_75: {
+id: 7075,
+restaurant_id: 702,
+reservation_date: '2020-02-12',
+people_num: 20
+}
+
+siete_1_76: {
+id: 7076,
+restaurant_id: 702,
+reservation_date: '2020-02-13',
+people_num: 20
+}
+
+siete_1_77: {
+id: 7077,
+restaurant_id: 702,
+reservation_date: '2020-02-14',
+people_num: 20
+}
+
+siete_1_78: {
+id: 7078,
+restaurant_id: 702,
+reservation_date: '2020-02-15',
+people_num: 20
+}
+
+siete_1_79: {
+id: 7079,
+restaurant_id: 702,
+reservation_date: '2020-02-16',
+people_num: 20
+}
+
+siete_1_80: {
+id: 7080,
+restaurant_id: 702,
+reservation_date: '2020-02-17',
+people_num: 20
+}
+
+siete_1_81: {
+id: 7081,
+restaurant_id: 702,
+reservation_date: '2020-02-18',
+people_num: 20
+}
+
+siete_1_82: {
+id: 7082,
+restaurant_id: 702,
+reservation_date: '2020-02-19',
+people_num: 20
+}
+
+siete_1_83: {
+id: 7083,
+restaurant_id: 702,
+reservation_date: '2020-02-20',
+people_num: 20
+}
+
+siete_1_84: {
+id: 7084,
+restaurant_id: 702,
+reservation_date: '2020-02-21',
+people_num: 20
+}
+
+siete_1_85: {
+id: 7085,
+restaurant_id: 702,
+reservation_date: '2020-02-22',
+people_num: 20
+}
+
+siete_1_86: {
+id: 7086,
+restaurant_id: 702,
+reservation_date: '2020-02-23',
+people_num: 20
+}
+
+siete_1_87: {
+id: 7087,
+restaurant_id: 702,
+reservation_date: '2020-02-24',
+people_num: 20
+}
+
+siete_1_88: {
+id: 7088,
+restaurant_id: 702,
+reservation_date: '2020-02-25',
+people_num: 20
+}
+
+siete_1_89: {
+id: 7089,
+restaurant_id: 702,
+reservation_date: '2020-02-26',
+people_num: 20
+}
+
+siete_1_90: {
+id: 7090,
+restaurant_id: 702,
+reservation_date: '2020-02-27',
+people_num: 20
+}
+
+siete_1_91: {
+id: 7091,
+restaurant_id: 702,
+reservation_date: '2020-02-28',
+people_num: 20
+}
+
+siete_1_92: {
+id: 7092,
+restaurant_id: 702,
+reservation_date: '2020-03-01',
+people_num: 20
+}
+
+siete_1_93: {
+id: 7093,
+restaurant_id: 702,
+reservation_date: '2020-03-02',
+people_num: 20
+}
+
+siete_1_94: {
+id: 7094,
+restaurant_id: 702,
+reservation_date: '2020-03-03',
+people_num: 20
+}
+
+siete_1_95: {
+id: 7095,
+restaurant_id: 702,
+reservation_date: '2020-03-04',
+people_num: 20
+}
+
+siete_1_96: {
+id: 7096,
+restaurant_id: 702,
+reservation_date: '2020-03-05',
+people_num: 20
+}
+
+siete_1_97: {
+id: 7097,
+restaurant_id: 702,
+reservation_date: '2020-03-06',
+people_num: 20
+}
+
+siete_1_98: {
+id: 7098,
+restaurant_id: 702,
+reservation_date: '2020-03-07',
+people_num: 20
+}
+
+siete_1_99: {
+id: 7099,
+restaurant_id: 702,
+reservation_date: '2020-03-08',
+people_num: 20
+}
+
+
+siete_1_100: {
+id: 70100,
+restaurant_id: 702,
+reservation_date: '2020-03-09',
+people_num: 20
+}
+
+siete_1_101: {
+id: 70101,
+restaurant_id: 702,
+reservation_date: '2020-03-10',
+people_num: 20
+}
+
+siete_1_102: {
+id: 70102,
+restaurant_id: 702,
+reservation_date: '2020-03-11',
+people_num: 20
+}
+
+siete_1_103: {
+id: 70103,
+restaurant_id: 702,
+reservation_date: '2020-03-12',
+people_num: 20
+}
+
+siete_1_104: {
+id: 70104,
+restaurant_id: 702,
+reservation_date: '2020-03-13',
+people_num: 20
+}
+
+siete_1_105: {
+id: 70105,
+restaurant_id: 702,
+reservation_date: '2020-03-14',
+people_num: 20
+}
+
+siete_1_106: {
+id: 70106,
+restaurant_id: 702,
+reservation_date: '2020-03-15',
+people_num: 20
+}
+
+siete_1_107: {
+id: 70107,
+restaurant_id: 702,
+reservation_date: '2020-03-16',
+people_num: 20
+}
+
+siete_1_108: {
+id: 70108,
+restaurant_id: 702,
+reservation_date: '2020-03-17',
+people_num: 20
+}
+
+siete_1_109: {
+id: 70109,
+restaurant_id: 702,
+reservation_date: '2020-03-18',
+people_num: 20
+}
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+#grupo 5
+reservagrupo5:
+  id: 1
+  reservation_date: 2020/24/2
+  people_num: 2
+  status: nil
+  promo_id: 1
+  hist_yumi_id: 1
+  restaurant_id: 1
+  diner_id: 1
+
+reservagrupo51:
+  id: 2
+  reservation_date: 2020/24/2
+  people_num: 2
+  status: nil
+  promo_id: 1
+  hist_yumi_id: 1
+  restaurant_id: 1
+  diner_id: 1
+
+reservagrupo51:
+  id: 3
+  reservation_date: 2020/24/2
+  people_num: 2
+  status: nil
+  promo_id: 1
+  hist_yumi_id: 1
+  restaurant_id: 1
+  diner_id: 1
+
+reservagrupo51:
+  id: 4
+  reservation_date: 2020/24/2
+  people_num: 2
+  status: nil
+  promo_id: 1
+  hist_yumi_id: 1
+  restaurant_id: 2
+  diner_id: 1

@@ -1,0 +1,88 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <% if current_user.is_restaurant? && current_user.is_google %>
+                    <%= image_tag(current_user.provider, class: 'img-circle') %>
+                <% else %>
+                    <%= image_tag('http://live.staticflickr.com/65535/49191292228_971e2c6fcb_m.jpg', class: 'img-circle') %>
+                <% end %>
+
+            </div>
+            <div class="pull-left info">
+                <p style="font-size: 13px"><%= current_user.restaurant.name %></p>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+        </div>
+     
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">Navegación</li>
+            <li class="active treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>Mis Datos</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<%= 'active' if request.path == '/restaurante/editar'%>">
+                        <%= link_to restaurante_editar_path do %>
+                            <i class="fa fa-circle-o"></i> Datos Personales
+                        <% end %>
+                    </li>
+                    <li class="<%= 'active' if request.path == '/usuario/editar'%>" >
+                        <%= link_to  edit_user_registration_path do %>
+                        <i class="fa fa-circle-o"></i> Datos de acceso
+                        <% end %>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-files-o"></i>
+                    <span>Opcion</span>
+                </a>
+
+            </li>
+
+            <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-pie-chart"></i> <span>Promociones</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="<%= 'active' if request.path == '/restaurante/promos'%>">
+                            <%= link_to restaurante_promos_path do %>
+                            <i class="fa fa-circle-o"></i>Promociones activas
+                            <% end %>
+                        </li>
+                        <li class="<%= 'active' if request.path == '/restaurante/promos/new'%>">
+                            <%= link_to new_restaurante_promo_path do %>
+                            <i class="fa fa-circle-o"></i>Agregar promoción
+                            <% end %>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+            <li>
+                <a href="/restaurante/menu_types">
+                    <i class="fa fa-envelope"></i> <span>Menús</span>
+
+                </a>
+            </li>
+
+
+            <li><a href="/restaurante/plates"><i class="fa fa-book"></i> <span>Platos</span></a></li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,267 @@
+<%if @restaurant_info.any?%>
+<div role="main" class="main">
+	<section class="page-header page-header-modern page-header-background page-header-background-sm" style="background-image: url(https://live.staticflickr.com/65535/49191282078_c31260383e_k.jpg)">
+					<div class="container">
+						<div class="row my-4">
+							<div class="col-md-12 align-self-center p-static order-2 text-center">
+								<h1 class="text-14 py-3 mb-3 text-color-light"><strong> <%= @restaurant_info[0].name %> </strong></h1>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="pt-5">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12 text-center">
+								<h1 class="mt-4 mb-2">Acerca del <strong>Restaurant</strong></h1>
+								<h5 class="text-3"> <%= @restaurant_info[0].description%></h5>
+                                <h5 class="text-3" style="margin: 0 0 0px;"><b>Dirección:</b> <%=@restaurant_info[0].address%></h5>
+                                <h5 class="text-3" style="margin: 0 0 0px;"><b>Horario:</b> <%=@restaurant_info[0].hora_ap.to_i %> hs - <%=@restaurant_info[0].hora_cerr.to_i %> hs</h5>
+                                <h5 class="text-3" style="margin: 0 0 0px;"> <b>Capacidad:</b> <%= @restaurant_info[0].capacity%></h5>
+								<hr class="custom-divider">
+							</div>
+						</div>
+						<div class="row mt-4">
+							<div class="col-12">
+								<% if @opinion_summarized.any? %>
+									<%@opinion_summarized.each do |x| %>   
+        								<div class="container-fluid" style="text-center; margin: 1em auto 3em;">
+            								<div class="row justify-content-center">
+                								<div class="col-xs-12 col-md-3">
+                    								<div class="col-md-auto">
+                         								<h3 style="font-size:30px" class="mb-4">Cocina:<span class="float-right"><%= x.cocina %>/5</span></h3>
+                            								 <div class="progress mb-2" style="height: 7px;">
+                                 								<div class="progress-bar-warning"
+                                  								role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5"
+                                   								style="width: <%= x.cocina * 20 %>%">
+                                 								</div>
+                             								</div>
+                    								</div>
+                									</br>                      
+                									<div class="col-md-auto">
+                    									<h3 style="font-size:30px;" class="mb-4 ">Servicio:<span class="float-right"><%= x.servicio %>/5</span></h3>
+                        									<div class="progress mb-2" style="height: 7px;">
+                            									<div class="progress-bar-warning"
+                              									role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5"
+                               									style="width: <%= x.servicio * 20 %>%">
+                         									</div>
+                    									</div>
+														</div>
+														</br>       
+                										<div class="col-md-auto">
+                    										<h3 style="font-size:30px;" class="mb-4">Ambiente:<span class="float-right"><%= x.ambiente %>/5</span></h3>
+                    										<div class="progress mb-2" style="height: 7px;">
+                        										<div class="progress-bar-warning"
+                             										role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5"
+                             										style="width: <%= x.ambiente * 20 %>%">
+                        										</div>
+                    										</div>
+                										</div>
+            
+            										</div>
+                  
+             										<div class="col-xs-12 col-md-3 text-center">
+                     									<h3> Calificación total</h3>
+                     									<h1 class="rating-num"><%= x.calificacion %> /5 </h1>
+             											<div>
+                     										<span class="fa fa-user"></span> <%= x.total_votos %> Votos 
+               											</div>
+            										</div>
+            </div>
+         </div>
+        </div>
+     </div>
+    </div>
+							<style>
+        						.rating-num {
+            						margin-top:0px;
+            						font-size: 60px;
+        						}
+
+							</style>
+							<% end %>
+
+								<%else %>
+   
+   									
+       									<h1 style="text-align:center; margin:2em auto 3em;"> <%= flash[:error_o] %> </h1>
+   									
+
+									<% end %>
+
+							</div>
+						</div>
+					</div>
+				</section>
+				<% if @menu.empty? %>
+					<section class="section section-default">
+						<div class="container">
+							<h1 class="text-center orange" style ="color: #e09b23"><%=flash[:warning]%></h1>
+						</div>
+				</section>
+				<% else %>
+					<section class="section section-default">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									
+									<div class="tabs tabs-bottom tabs-center tabs-simple">
+										<ul class="nav nav-tabs">
+											<li class="nav-item active">
+												
+												<h2>Menu</h2>
+											</li>
+										</ul>
+										<div class="tab-content">
+											<div class="tab-pane active" id="tabsNavigationSimple1">
+												
+												<div class="row">
+												<% @menu.each do |m|%>
+													<div class="col-lg-4">
+														<div class="menu-item">
+															<span class="menu-item-price">$<%= m.price%></span>
+															<h3><%= m.plate_name%></h4>
+															<h5><%= m.name%></h5>
+															<p><%= m.description%></p>
+														</div>
+													</div>
+												<%end%>	
+												</div>
+
+											</div>
+										</div>
+									</div>
+	
+								</div>
+							</div>
+						</div>
+				</section>
+				<% end %>
+				
+				<!--<section class="pt-3 pb-3">
+					<div class="container">
+						<div class="row mb-5">
+							<div class="col-lg-12 text-center">
+								<h3 class="mt-4 mb-2"> <strong>Fotos del restaurant</strong></h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+
+								<hr class="custom-divider">
+
+								<div class="lightbox" data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
+									<div class="masonry-loader masonry-loader-showing">
+										<div class="masonry" data-plugin-masonry data-plugin-options="{'itemSelector': '.masonry-item'}">
+											<div class="masonry-item">
+												<span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
+													<span class="thumb-info-wrapper">
+														<img src="img/demos/restaurant/gallery/restaurant-gallery-1.jpg" class="img-fluid" alt="">
+														<span class="thumb-info-action thumb-info-action-custom">
+															<a href="img/demos/restaurant/gallery/restaurant-gallery-1.jpg">
+																<span class="thumb-info-icon-custom"></span>
+															</a>
+														</span>
+													</span>
+												</span>
+											</div>
+											<div class="masonry-item w2">
+												<span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
+													<span class="thumb-info-wrapper">
+														<img src="img/demos/restaurant/gallery/restaurant-gallery-2.jpg" class="img-fluid" alt="">
+														<span class="thumb-info-action thumb-info-action-custom">
+															<a href="img/demos/restaurant/gallery/restaurant-gallery-2.jpg">
+																<span class="thumb-info-icon-custom"></span>
+															</a>
+														</span>
+													</span>
+												</span>
+											</div>
+											<div class="masonry-item">
+												<span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
+													<span class="thumb-info-wrapper">
+														<img src="img/demos/restaurant/gallery/restaurant-gallery-4.jpg" class="img-fluid" alt="">
+														<span class="thumb-info-action thumb-info-action-custom">
+															<a href="img/demos/restaurant/gallery/restaurant-gallery-4.jpg">
+																<span class="thumb-info-icon-custom"></span>
+															</a>
+														</span>
+													</span>
+												</span>
+											</div>
+											<div class="masonry-item">
+												<span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
+													<span class="thumb-info-wrapper">
+														<img src="img/demos/restaurant/gallery/restaurant-gallery-3.jpg" class="img-fluid" alt="">
+														<span class="thumb-info-action thumb-info-action-custom">
+															<a href="img/demos/restaurant/gallery/restaurant-gallery-3.jpg">
+																<span class="thumb-info-icon-custom"></span>
+															</a>
+														</span>
+													</span>
+												</span>
+											</div>
+											<div class="masonry-item">
+												<span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
+													<span class="thumb-info-wrapper">
+														<img src="img/demos/restaurant/gallery/restaurant-gallery-5.jpg" class="img-fluid" alt="">
+														<span class="thumb-info-action thumb-info-action-custom">
+															<a href="img/demos/restaurant/gallery/restaurant-gallery-5.jpg">
+																<span class="thumb-info-icon-custom"></span>
+															</a>
+														</span>
+													</span>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>--->
+
+				<div class="container-fluid">
+					<div class="row mt-5">
+
+						<div class="col-lg-6 p-0">
+							<section class="section section-quaternary section-no-border h-100 mt-0">
+								<div class="row justify-content-end">
+									<div class="col-half-section col-half-section-right">
+										<div class="text-center" style="margin-top: 10em; margin-right: 19em;">
+											<h4 class="mb-0 heading-dark" ><strong><%= link_to "Opiniones de los usuarios", my_link_path(:restaurantID => @restaurantID)%></strong></h4>
+											<p class="mb-1">¡Conoce la opinion de otros usuarios acerca de este restaurant! </p>
+
+											<hr class="custom-divider m-0">
+										</div>
+
+									</div>
+								</div>
+							</section>
+						</div>
+
+						<div class="col-lg-6 p-0">
+							<section class="section section-tertiary section-no-border h-100 mt-0">
+								<div class="row">
+									<div class="col-half-section">
+										<div class="text-center">
+											<h4 class="mt-3 mb-0 heading-dark" style="margin-left: 8em"><strong>Nuestra ubicación</strong></h4>
+											<hr class="custom-divider m-0">
+										</div>
+										<div class="card-box">
+											<iframe class="iframe" style="margin-left: 14em;" src="https://maps.google.com/maps?q=<%= @restaurant_info[0].map_location %>&z=14&t=m&output=embed&z=16" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+										</div> 
+									</div>
+								</div>
+							</section>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+<%else%>
+	<div class="content">             
+        <div class="text-center" style="margin-top: 20em">
+            <i class="h1 far fa-frown text-muted"></i> <i class=""></i>
+            <h1 class="mb-3 orange" style ="color: #e09b23"><%=flash[:error]%></h1>
+        </div>
+    </div>
+<%end%>

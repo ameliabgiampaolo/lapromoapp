@@ -1,0 +1,24 @@
+<% if photos %>
+    
+    <% photos.each do |p| %>
+        <%
+=begin%>
+ <div id="photo_<%= p.id %>" class="col-md-4 col-sm-12" > 
+<%
+=end%>
+            <div class="parent col-sm-12 col-md-4">
+            <%= form_tag( '/restaurante/borrar_photo' , id: 'photo_form', class: 'photo  ', authenticity_token: true) do |form| %>
+                
+                <%= image_tag p.photo_was, class:'width-100 img-16-9' %>
+            
+                <input type="hidden" value="<%= p.id %>" name="id" id="photo_id">
+		                        
+                <button type="submit" class="btn btn-danger fix" ><i class="fa fa-fw fa-trash"></i></button>
+
+            <% end %>
+            </div>
+            
+        
+    <% end %>
+
+<% end %>

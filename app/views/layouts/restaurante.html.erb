@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LA PROMO - Restaurante</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'restaurante', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'restaurante', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <%= yield :head %>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <%= render  "shared/restaurante/header" %>
+        <%= render  "shared/restaurante/main_sidebar" %>
+        <div class="content-wrapper">
+            <%= yield %>
+        </div>
+        <%= render  "shared/restaurante/footer" %>
+    </div>
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <script src='https://pedrofumero.com/assets/jquery.inputmask.js'></script>
+<script src='https://pedrofumero.com/assets/jquery.inputmask.extensions.js'></script>
+<script src='https://pedrofumero.com/assets/restaurant_form.js'></script>
+    
+    <%= yield :js %>
+</body>
+
+</html>

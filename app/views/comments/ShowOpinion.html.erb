@@ -1,0 +1,66 @@
+<% if @opiniones.any? %>
+   
+   </br>
+   <button type="button" class="btn btn-primary" style="background-color: #344257; border-color: #344257; margin-left: 3em;"><%= link_to "Regresar a Restaurant", restaurant_info_path(:restaurantID => @restaurantID)%></button>
+   <% @opiniones.each do |x| %>
+   
+    <div class="container">
+        
+        <div class="card">
+               <div class="card-body"style="text-align:left;">
+                  <h5 style="margin-left:-12px;"> <%= x.nombre %> </h5>
+                  <h6 style="margin-left:-12px;"> <%= x.description %></h6>
+                  <p class="text-lowercase"style="margin-left:-12px;">Fecha de la comida: <%= x.fecha %> </p>
+               </div>
+               <div class="card-footer text-muted">
+                     <div class="row">
+                        <div class="col-md-auto">
+                            <h5 class="mb-2 font-weight-bold">Cocina: <span class="float-right"> <%= x.kitchen_rating %>/5</span></h5>
+                             <div class="progress mb-1" style="height: 7px;">
+                                 <div class="progress-bar"
+                                  role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5"
+                                   style="width: <%= x.kitchen_rating * 20 %>%; background-color: #344257">
+                                 </div>
+                             </div>
+                        </div>   
+                               
+                       <div class="col-md-auto">
+                            <h5 class="mb-2 font-weight-bold">Servicio: <span class="float-right"> <%= x.service_rating %>/5</span></h5>
+                             <div class="progress mb-1" style="height: 7px;">
+                                 <div class="progress-bar"
+                                  role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5"
+                                   style="width: <%= x.service_rating * 20 %>%; background-color: #344257">
+                                 </div>
+                             </div>
+                        </div>   
+                        
+                        <div class="col-md-auto">
+                            <h5 class="mb-2 font-weight-bold">Ambiente: <span class="float-right"> <%= x.ambient_rating %>/5</span></h5>
+                             <div class="progress mb-1" style="height: 7px;">
+                                 <div class="progress-bar"
+                                  role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5"
+                                   style="width: <%= x.ambient_rating * 20 %>%; background-color: #344257">
+                                 </div>
+                             </div>
+                        </div>   
+                     </div>
+               </div>
+        </div>
+    </div>
+    </br>
+   
+   <% end %>
+   <br>
+       
+     <%= will_paginate @opiniones , previous_label:"Previo ", next_label: "Siguiente" , class:"digg_pagination pagination justify-content-center"%>
+ 
+   </br>
+
+<%else %>
+    <button type="button" class="btn btn-primary" style="background-color: #344257; border-color: #344257; margin-left: 3em;"><%= link_to "Regresar a Restaurant", restaurant_info_path(:restaurantID => @restaurantID)%></button>
+   <div class="container">
+   
+       <h1 style="text-align:center; margin: 9em auto 3em;"> <%= flash[:warning] %> </h1>
+   </div>
+<% end %>
+

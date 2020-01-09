@@ -1,0 +1,39 @@
+<section class="content-header">
+      <h1>
+        Administrar tipos de menu
+      </h1>
+</section>
+
+<section class="content">
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">Categorias</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+      <%= link_to 'Nueva categpria', new_restaurante_menu_type_path, :class => 'btn btn-success' %>
+        <table id="example2" class="table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th>Nombre</th>
+          </tr>
+          </thead>
+          <tbody>
+            <% @menu_types.each do |menu_type| %>
+              <tr>
+                <td><%= menu_type.name %></td>
+                <td><%= link_to 'Editar', edit_restaurante_menu_type_path(menu_type), :class => 'btn btn-warning' %></td>
+                <td><%= link_to 'Eliminar', [:restaurante, menu_type], method: :delete, data: { confirm: '¿Estás seguro que deseas eliminarlo?' }, :class => 'btn btn-danger' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= link_to 'Nueva categoria', new_restaurante_menu_type_path, :class => 'btn btn-success' %>
+        <%= link_to 'Agrega un plato a tus categorias', new_restaurante_plate_path, :class => 'btn btn-primary' %>
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</section>

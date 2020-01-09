@@ -1,0 +1,59 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <%= image_tag('administrador/user2-160x160.jpg', class: 'img-circle') %>
+
+            </div>
+            <div class="pull-left info">
+                <p style="color: white"><%= current_user.user_name %></p>
+                <a href="#"><i class="fa fa-circle text-success"></i> En linea</a>
+            </div>
+        </div>
+        <!-- search form -->
+       
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">Navegación</li>
+            <li class="active treeview">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> <span>Verificación de restaurantes</span>
+                    <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                </a>
+                <ul class="treeview-menu">
+                        
+                    <li><%= link_to  "Restaurantes aprobados", administrador_aprobados_path %></li>
+                    <li><%= link_to  "Restaurantes no aprobados", administrador_not_approved_path %></li>
+                    <li><%= link_to  "Ver todos", administrador_restaurants_path %></li>
+                </ul>
+
+            </li>
+            <li class="active treeview">
+                <a href="#">
+
+                    <i class="fa fa-question-circle" style="color:white" > </i><span>Preguntas frecuentes</span>
+
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                        
+                    <li><%= link_to 'Crear nueva pregunta frecuente', new_administrador_article_path %></li>
+                    <li><%= link_to  'Listado de preguntas', administrador_articles_path %></li>
+                </ul>
+                
+            </li>
+        
+          
+         
+       
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

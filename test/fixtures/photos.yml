@@ -1,0 +1,25 @@
+three_one:
+  photo: 'uno.png'
+  # restaurant_id: 1
+
+three_two:
+  photo: ''
+  # restaurant_id: 2
+
+three_three:
+  photo: 'tres.png'
+  # restaurant_id: 3
+
+
+tres_photo1:
+  photo: 'uno.png'
+  restaurant: tres_restaurant1
+  place: tres_place1
+tres_photo2:
+  photo: 'image-invalida.exe'
+  restaurant: 2
+  place: tres_place5
+tres_photo3:
+  photo: 'tres.png'
+  restaurant: tres_restaurant2
+  place: tres_place5

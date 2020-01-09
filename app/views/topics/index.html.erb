@@ -1,0 +1,42 @@
+<div class="container">
+	<h2 class ="display-3"style="text-align: center;">¿Cómo podemos ayudarte?</h2>
+
+	<section >
+		<div class="container text-center col-lg-8" style="text-align: center;">
+			<%=form_tag('/articles/busqueda', method: :get) do%>
+				<div class="input-group text-center" style="text-align: center">
+					<%= text_field_tag :title, params[:title], placeholder:'Ingrese pregunta...', :class => "form-control", style: "height:37px"%>
+					<span class="input-group-btn">
+					<%= submit_tag 'Buscar', style:"background-color: #589442;  color: #ffffff; border-color: #589442;", name: nil, :class => "btn btn-info btn-flat"%>
+					</span>
+				</div>
+			<%end%>
+		</div>
+	</section > 
+
+	<br>  <br>
+
+	<section >
+		<div class="row mb-4">	
+			<% @topics.each do |topic| %>
+				<div class="col-md-6 col-lg-4 p-1 isotope-item">
+					<div class="listing-item" >
+						<%= link_to controller:'articles', action:'index', topic_id: topic.id do%>
+							<div class="thumb-info thumb-info-lighten border">													
+								<%= image_tag topic.image ,style: "filter: brightness(50%);"%>
+									<div class="centered">				
+										<h2 style =  "font-size:50px; color: white; text-align: center;">
+											<%= topic.name%>
+										</h2>
+									</div>
+							</div>
+						<%end%>
+					</div>
+									
+				</div>
+			<%end%>
+		</div>
+	</section >
+</div>
+
+				

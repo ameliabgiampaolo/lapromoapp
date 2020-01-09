@@ -1,0 +1,31 @@
+siete_one: {
+  id: 701,
+  name: "Pasta",
+  cont_trend: 45,
+  image: "imgen"  
+}
+siete_two: {
+  id: 702,
+  name: "Pasta",
+  cont_trend: 1,
+  image: "imgen"  
+}
+dos_one:
+  id: 1
+  name: 'Yumis'
+  cont_trend: 0
+
+dos_two:
+  id: 2
+  name: 'Yumis2'
+  cont_trend: 0
+
+dos_three:
+  id: 3
+  name: 'Yumis3'
+  cont_trend: 0
+
+dos_four:
+ id: 4
+ name: 'Yumis3'
+ cont_trend: 0

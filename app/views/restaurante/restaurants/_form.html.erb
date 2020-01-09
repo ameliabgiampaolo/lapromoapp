@@ -1,0 +1,259 @@
+
+
+
+
+
+
+
+<div class="box box-primary">
+	
+	<%= simple_form_for([:restaurante, @restaurant], html: {multipart: true}, :defaults => { :input_html => { :class => "form-control" } },url: :restaurante_restaurant, method: :patch) do |f| %>
+
+		<div class="box-header" >
+			<h1 class="col-md-12" >Mis datos</h1>
+			
+		</div>
+
+		<div class="box-body" >
+
+			
+			<% if flash[:notice] %>
+
+				<div class="form-group  col-sm-12 " >
+				<div class="alert alert-success alert-dismissible">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+					<h4><i class="icon fa fa-check"></i><%= notice %></h4> 
+				
+				</div>
+				</div>
+				
+			<%end%>
+
+			<% if flash[:alert] %>
+
+			<div class="form-group  col-sm-12 " >
+			<div class="alert alert-warning alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				<h4><i class="icon fa fa-warning"></i><%= alert %></h4> 
+			
+			</div>
+			</div>
+			
+			<%end%>
+			
+
+
+
+            <% if restaurant.errors.any? || @error_image != '' %>
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-ban"></i> Error!</h4>  
+                  <ul class="chart-legend clearfix">
+
+                      <% restaurant.errors.each do |attr,msg| %>
+					  	<% if attr.to_s.include? 'user.restaurant' %>
+							<% if msg == 'debe existir' %>
+								<li><i class="fa fa-circle-o text-white"></i> El campo parroquia <%= msg  %> </li>
+							<% else %>
+								<li><i class="fa fa-circle-o text-white"></i> <%= msg  %> </li>
+							<% end %>
+						<% end %>
+                      <%end%>
+
+					<% if @error_image != '' %>
+						<li><i class="fa fa-circle-o text-white"></i> <%= raw @error_image %></li>
+				  	<%end%>
+				  </ul>
+                
+                </div>
+            <% end %>
+
+			<div class="form-group col-sm-12 col-md-8 <%= "has-error" if @restaurant.errors[:name].any? %>">
+				<label class="control-label">Nombre</label>
+				<%= f.input_field :name %>
+				<%= f.error :name, class:'help-block' %>
+			</div>
+
+			<div class="form-group col-sm-12 col-md-4 <%= "has-error" if @restaurant.errors[:rif].any? %>">
+				<label class="control-label">Rif</label>
+				<%= f.input_field :rif, :'data-inputmask' => '"mask": "J-99999999-9"', 'data-mask'=>'' %>
+				<%= f.error :rif, class:'help-block' %>
+			</div>
+
+			<div class="form-group col-sm-12 col-md-5 <%= "has-error" if @restaurant.errors[:user_attributes].any? %>">
+				<label class="control-label">Teléfono</label>
+				<%= f.fields_for :user, defaults: { input_html: { class: 'form-control', 'data-inputmask'=>'"mask": "(999) 999-9999"', 'data-mask'=>'' } } do |form_user| %>
+					<%= form_user.input_field :phone %>
+					<%= f.error :'user.phone', class:'help-block' %>
+				<% end %>
+			</div>
+
+			<div class="form-group col-sm-12 col-md-5 <%= "has-error" if @restaurant.errors[:capacity].any? %>">
+				<label class="control-label">Capacidad</label>
+				<%= f.input_field :capacity %>
+				<%= f.error :capacity, class:'help-block' %>
+			</div>
+
+			<div class="form-group col-sm-12 col-md-2 <%= "has-error" if @restaurant.errors[:particular].any? %>">
+				<label class="control-label" style="display: block; margin: 27px;" ></label>      
+				<label class="control-label">Es particular:</label>
+				<%= f.check_box :particular %>
+				<%= f.error :'particular', class:'help-block' %>
+			</div>
+
+
+			<div class="form-group col-sm-12 <%= "has-error" if @restaurant.errors[:description].any? %>" >
+				<label class="control-label">Descripción</label>      
+				<%= f.input_field :description %>
+				<%= f.error :description, class:'help-block' %>
+			</div>
+
+			<div class="form-group col-sm-12 col-md-6 <%= "has-error" if @restaurant.errors[:start_time].any? %>">
+			<div class="bootstrap-timepicker">
+				<div class="">
+					
+						<div class="input-group width-100">
+							<label class="control-label"> Hora de apertura </label>
+							<% if @restaurant.start_time? %>	
+								<input type="text" name="restaurant[start_time]" id="restaurant_start_time" value="<%= @restaurant.start_time.strftime("%H:%M") %>" class="form-control timepicker"> 
+							<% else %>
+								<input type="text" name="restaurant[start_time]" id="restaurant_start_time" value="" class="form-control timepicker"> 
+							<% end %>
+						</div>
+
+					<%= f.error :start_time, class:'help-block' %>
+					
+				</div>
+			</div>
+			</div>
+			
+			<div class="form-group col-sm-12 col-md-6 <%= "has-error" if @restaurant.errors[:end_time].any? %>">
+			<div class="bootstrap-timepicker">
+				<div class=" ">
+				
+					<div class="input-group width-100"  >
+							<label class="control-label"> Hora de cierre </label>
+						<% if @restaurant.end_time? %>	
+							<input type="text" name="restaurant[end_time]" id="restaurant_end_time" value="<%= @restaurant.end_time.strftime("%H:%M") %>" class="form-control timepicker"> 
+						<% else %>
+							<input type="text" name="restaurant[end_time]" id="restaurant_end_time" value="" class="form-control timepicker"> 
+						<% end %>
+					</div>
+					<%= f.error :end_time, class:'help-block' %>
+				</div>
+			</div>
+			</div>
+			
+				<div class="form-group col-sm-12 <%= "has-error" if @restaurant.errors[:address].any? %>">
+					<label class="control-label">Dirección</label>
+				</div>
+
+				<div class="col-sm-12 col-md-4 " style="margin-bottom: 4px;" >
+					<select id="estados" class="form-control select2" > 
+						<option value='' >Selecciona un estado</option>
+					</select>
+				</div>
+
+				<div class="col-sm-12 col-md-4" style="margin-bottom: 4px;" >
+					<select id="municipios" class="form-control select2" >
+						<option value='' >Selecciona un municipio</option>
+					</select>
+				</div>
+
+				<div class="col-sm-12 col-md-4 <%= "has-error" if @restaurant.errors[:place].any? %>" style="margin-bottom: 4px;">
+					<select name="place_id" id="restaurant_place_id" class="form-control select2" >
+						<option value='' >Selecciona una parroquia</option>
+					</select>
+					
+					<%= f.error :place, class:'help-block' %>
+				</div>
+
+				
+			<div class="form-group top-7 col-sm-12 <%= "has-error" if @restaurant.errors[:address].any? %>">
+				<%= f.input_field :address, placeholder:'Dirección (referencia))' %>				
+				<%= f.error :address, class:'help-block' %>
+			</div>
+
+			<div class="form-group col-sm-12 col-md-4 <%= "has-error" if @restaurant.errors[:zip_code].any? %>">
+				<label class="control-label" >Zona postal</label>
+				<%= f.input_field :zip_code, placeholder:'Zona postal' %>
+				<%= f.error :zip_code, class:'help-block' %>
+				
+			</div>
+
+
+			<div class="form-group col-sm-12 col-md-8 <%= "has-error" if @restaurant.errors[:map_location].any? %>">
+				<%= f.hidden_field :map_location %>
+				<label class="control-label" >Mapa</label>
+				<span>(Busca la ubicación de tu restaurant)</span>
+				<div id='map'></div>
+
+				<% if @restaurant.errors[:map_location].present? %> 
+				<%= @restaurant.errors[:map_location].each do |msg| %>
+					<%= msg %></span>
+				<% end %>
+				<% end %>
+			</div>
+
+		
+			<div class="form-group col-sm-12 <%= "has-error" if @restaurant.errors[:'photos.photo'].any? || @error_image != '' %>">
+				<label class="control-label" >Fotos</label>
+				<div id="fotos">
+				</div>
+				<a class="btn" id="add_photo">Agregar foto</a>
+					
+				<%= f.error :'photos.photo', class:'help-block' %>
+				<span , class="help-block"> <%= raw @error_image %></span>
+			</div>
+			
+		</div>
+
+		<div class="box-footer col-sm-12">
+			<div class="form-group col-sm-12">
+				<button type="submit" class="btn btn-primary">Actualizar</button>
+			</div>
+		</div>
+
+	<% end %>
+	<div class="box-footer col-sm-12">
+		<div class="col-sm-12" >
+		<h3>Mis Fotos</h3>
+			<%= render 'display_photos', photos: @photosr %>
+		</div>
+	</div>
+</div>
+
+
+		
+
+<script> 
+  	var id_ = '#restaurant_place_id';
+	var token_mapbox = 'pk.eyJ1IjoiZnJhbmMtZXYiLCJhIjoiY2sza2xyeDI4MDQ0eDNjdDVqMGtmOWw5eSJ9.UOlYmDPkVesegvlbd8Taag'
+	try {
+	
+	<%if restaurant.place_id %>
+		var parroquia_sel_id =  <%= @restaurant.place_id || '' %>;
+		var municipio_sel_id = <%= @municipio_id || '' %>;
+		var estado_sel_id = <%= @estado_id || '' %>;
+		
+	<%else%>
+		var parroquia_sel_id =  undefined;
+		var municipio_sel_id =  undefined;
+		var estado_sel_id =  undefined;
+	<%end%>
+	} catch (error) {
+		
+	}
+	<%if restaurant.map_location %>
+		var map_location =  true;
+		var m = '<%= @restaurant.map_location %>';
+		var map_lat = parseFloat(m.split(',')[0]);
+		var map_lng = parseFloat(m.split(',')[1])
+	<%else%>
+		var map_location =  false;
+		var map_lat = -66.93333;
+		var map_lng = 10.5;
+		
+	<%end%>
+</script>
+

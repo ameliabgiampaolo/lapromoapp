@@ -1,0 +1,54 @@
+<body>
+    <div id="wrapper">
+
+
+        <div class="content2">
+           
+                <div class="text-center">
+                    <i class="fas fa-comments" style="font-size: 3em; color:darkgray"></i>
+                    <br><br>
+
+                    <h3 class="mb-3 orange">Resultado de la búsqueda</h3>
+                    <p class="text-muted"> Si no logras encontrar la pregunta que estabas buscando<br/> Envíanos tus preguntas por e-mail y las responderemos a la brevedad posible!<br>
+                   
+                    </p>      
+                        <%= mail_to 'lapromoucab@gmail.com' do%>
+                                    <button type="button" class="btn btn-success waves-effect waves-light mt-2 mr-1" ><i class="fas fa-envelope"></i> Envía un e-mail</button><%end%>
+               
+                </div>
+               
+           
+
+
+       
+                 <div class="subcont">
+                    <div class="row pt-5">
+                        <% @articles.each do |article|%>
+                        <div class="col-lg-5 offset-lg-1">
+                            <!-- Question/Answer -->
+                            
+                                <div>
+                                    <div class="faq-question-q-box">Q.</div>
+                                    <h4 class="faq-question" style="color: black;" data-wow-delay=".1s"><%= link_to article.title, contenido_path(article.id), :style => "color: black;" %></h4></a>
+                                    <p class="faq-answer mb-4" style="font-size: 10px;"> Cantidad de visitas: <%= article.cont_trend %></p>
+                                    
+                                </div>
+
+                                              
+    
+                        </div> <!--/col-lg-5 -->                       
+                        <%end%>  
+
+                    </div> <!--/row pt-5 -->
+                         
+                    <%= will_paginate @articles, class: 'digg_pagination justify-content-center', style:'float:right; position: relative; left:-50%;', previous_label:"<", next_label:">"%> 
+                    <br>
+                    <br>
+                    <button type="submit" style="background-color: #b4b2b2; color:black; border-color: #b4b2b2" class="btn btn-info btn-flat float-left" onClick="history.back()">Volver</button>
+                </div> <!--/subcont -->
+
+        </div> <!-- content -->
+
+    </div> <!-- wrapper --> 
+ 
+</body>

@@ -1,0 +1,15 @@
+<div id="flashes">
+
+        <% if flash[:notice] %>
+          <h2 id="flash_notice" class="twinkling"><%= flash[:notice] %></h2>
+        <% end %>
+      
+        <% if flash[:error] || flash[:errors] %>
+          <p id="flash_errors" class="messages errors"><%= flash[:error] || flash[:errors] %></p>
+          <%= javascript_tag "$('#flash_errors').effect('highlight',{},1000);" %>
+        <% end %>
+      
+        <% flash[:error] = flash[:errors] = flash[:notice] = nil %>
+        <h2>Se envió un correo de notificación al restaurante.</h2>
+</div>
+<%= link_to  "Regresar", administrador_not_approved_path, class: "btn btn-primary" %>
